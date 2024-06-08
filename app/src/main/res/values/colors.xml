@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+<!--    button color-->
+    <color name="desaturatedyellow">#66623C</color>
+<!--    Topic color-->
+    <color name="desaturatedOrange">#623E2A</color>
+    <color name="paleOrange">#FFF6EF</color>
 </resources>
