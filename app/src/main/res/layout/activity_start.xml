@@ -28,7 +28,7 @@
         android:layout_marginTop="71dp"
         android:layout_marginEnd="111dp"
         android:text="BE FREE"
-        android:textColor="#6A5B43"
+        android:textColor="#623E2A"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

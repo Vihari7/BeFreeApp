@@ -7,5 +7,7 @@
 <!--    Topic color-->
     <color name="desaturatedOrange">#623E2A</color>
     <color name="paleOrange">#FFF6EF</color>
-    <color name="backgroundLines">#6A5B43</color>
+
+    <color name="grey">#5E5A54</color>
+    <color name="backgroundLines">#D4AB8B</color>
 </resources>
