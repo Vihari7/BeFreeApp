@@ -2,12 +2,33 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-<!--    button color-->
-    <color name="desaturatedyellow">#66623C</color>
-<!--    Topic color-->
-    <color name="desaturatedOrange">#623E2A</color>
-    <color name="paleOrange">#FFF6EF</color>
+    <!-- Soft Blue Variations -->
+    <color name="softBlueLightest">#E0F7FA</color>
+    <color name="softBlueLighter">#B2EBF2</color>
+    <color name="softBlueLight">#80DEEA</color>
+    <color name="softBlue">#4DD0E1</color>
+    <color name="softBlueDark">#26C6DA</color>
+    <color name="softBlueDarker">#00ACC1</color>
+    <color name="blueDarkest">#0097A7</color>
 
-    <color name="grey">#5E5A54</color>
-    <color name="backgroundLines">#D4AB8B</color>
+    <!-- Lavender Variations -->
+    <color name="lavenderLightest">#F3E5F5</color>
+    <color name="lavenderLighter">#E1BEE7</color>
+    <color name="lavenderLight">#CE93D8</color>
+    <color name="lavender">#BA68C8</color>
+    <color name="lavenderDark">#AB47BC</color>
+    <color name="lavenderDarker">#9C27B0</color>
+    <color name="lavenderDarkest">#7B1FA2</color>
+
+    <!-- Soft Pink Variations -->
+    <color name="softPinkLightest">#FCE4EC</color>
+    <color name="softPinkLighter">#F8BBD0</color>
+    <color name="softPinkLight">#F48FB1</color>
+    <color name="softPink">#F06292</color>
+    <color name="softPinkDark">#EC407A</color>
+    <color name="softPinkDarker">#E91E63</color>
+    <color name="softPinkDarkest">#C2185B</color>
+
+    <!-- Neutral Colors -->
+    <color name="lightGray">#D3D3D3</color> <!-- Light gray for neutral elements -->
 </resources>
