@@ -17,14 +17,14 @@
         android:layout_marginTop="16dp"
         android:padding="10dp"
         android:text="SIGN UP"
-        android:textColor="@color/blueDarkest"
+        android:textColor="@color/blueButton"
         android:textSize="36sp"
         android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/signupImage"
         android:layout_width="wrap_content"
-        android:layout_height="292dp"
+        android:layout_height="277dp"
         android:layout_gravity="center"
         android:src="@drawable/signup" />
 
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@drawable/shapes_customize"
+        android:background="@drawable/round_edittext"
         android:hint="Email Address"
         android:padding="10dp"
         android:textColor="@color/softBlueLight" />
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@drawable/shapes_customize"
+        android:background="@drawable/round_edittext"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="10dp"
@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@drawable/shapes_customize"
+        android:background="@drawable/round_edittext"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:padding="10dp"
@@ -65,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/softBlueDarker"
+        android:backgroundTint="@color/blueButton"
         android:padding="15dp"
         android:text="Sign Up"
         android:textColor="@color/white"
@@ -77,8 +77,9 @@
         android:layout_height="19dp"
         android:layout_gravity="center"
         android:gravity="center"
+        android:layout_marginTop="10dp"
         android:text="Already have an account?"
-        android:textColor="@color/softBlueDark" />
+        android:textColor="@color/blueDarkest" />
 
     <TextView
         android:id="@+id/linkToLogin"

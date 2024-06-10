@@ -3,13 +3,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <!-- Soft Blue Variations -->
+    <color name="blueButton">#2F2D87</color>
     <color name="softBlueLightest">#E0F7FA</color>
     <color name="softBlueLighter">#B2EBF2</color>
     <color name="softBlueLight">#80DEEA</color>
     <color name="softBlue">#4DD0E1</color>
     <color name="softBlueDark">#26C6DA</color>
     <color name="softBlueDarker">#00ACC1</color>
-    <color name="blueDarkest">#0097A7</color>
+    <color name="blueDarkest">#1882D6</color>
 
     <!-- Lavender Variations -->
     <color name="lavenderLightest">#F3E5F5</color>
