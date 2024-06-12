@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="36dp"
     tools:context=".Login">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/logintext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:text="Log In"
+        android:textColor="@color/blueButton"
+        android:textSize="38sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/loginImage"
+        android:layout_width="wrap_content"
+        android:layout_height="277dp"
+        android:layout_gravity="center"
+        android:src="@drawable/login" />
+
+    <EditText
+        android:id="@+id/typeEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round_edittext"
+        android:hint="Email Address"
+        android:padding="10dp"
+        android:textColor="@color/softBlueLight" />
+
+    <EditText
+        android:id="@+id/typePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/round_edittext"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="@color/softBlueLight" />
+
+    <TextView
+        android:id="@+id/linktoForgetPW"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="10dp"
+        android:text="Forget Password?"
+        android:textColor="@color/blueDarkest" />
+
+    <Button
+        android:id="@+id/buttonSignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/blueButton"
+        android:padding="15dp"
+        android:text="LOG IN"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/linkToSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="If you're new to Be Free Let's Signup"
+        android:textAlignment="gravity"
+        android:textColor="@color/blueDarkest"
+        android:textStyle="bold" />
+</LinearLayout>

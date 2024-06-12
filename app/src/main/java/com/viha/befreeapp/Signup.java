@@ -20,9 +20,8 @@ public class Signup extends AppCompatActivity {
         buttonSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Your signup logic here
 
-                // Redirect to Login activity after signup
+                // Redirect to Login page
                 Intent intent = new Intent(Signup.this, Login.class);
                 startActivity(intent);
             }
