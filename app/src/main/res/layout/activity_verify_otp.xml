@@ -7,60 +7,56 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="36dp"
-    tools:context=".ForgotPassword">
+    tools:context=".VerifyOTP">
 
     <TextView
-        android:id="@+id/frogetPasswordText"
+        android:id="@+id/verifyOtpText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
-        android:text="Forget Password"
+        android:text="Verify Your Phone Number"
         android:textColor="@color/pinkDarker"
-        android:textSize="38sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/forgetPwImage"
+        android:id="@+id/verifyImage"
         android:layout_width="wrap_content"
         android:layout_height="277dp"
         android:layout_gravity="center"
-        android:src="@drawable/forgetpassword" />
-
-    <TextView
-        android:id="@+id/textInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:clickable="true"
-        android:focusable="true"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="Please enter your phone number to revise the verification code"
-        android:textAlignment="gravity"
-        android:textColor="@color/softPinkLight"
-        android:textStyle="bold" />
+        android:src="@drawable/verify" />
 
     <EditText
-        android:id="@+id/typeNumber"
+        android:id="@+id/textOfCode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:background="@drawable/red_edittext"
-        android:hint="Phone Number"
+        android:hint="Enter OTP"
         android:padding="10dp"
         android:textColor="@color/softBlueLight"
-        android:inputType="phone"/>
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/resendText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Resend Code"
+        android:textColor="@color/softPinkLight"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/buttonSubmit"
+        android:id="@+id/buttonVerify"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/pinkDarkest"
         android:padding="15dp"
-        android:text="Submit"
+        android:text="Verify"
         android:textColor="@color/white"
         android:textSize="20dp" />
-
 </LinearLayout>
