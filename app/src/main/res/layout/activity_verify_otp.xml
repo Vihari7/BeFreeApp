@@ -35,7 +35,7 @@
         android:background="@drawable/red_edittext"
         android:hint="Enter OTP"
         android:padding="10dp"
-        android:textColor="@color/softBlueLight"
+        android:textColor="@color/pinkDarker"
         android:inputType="number"/>
 
     <TextView
