@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30dp"
+    android:padding="28dp"
     android:background="@drawable/dashboadback"
     tools:context=".Dashboard">
 
@@ -47,13 +47,15 @@
             android:src="@drawable/logonoback"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-<!--moods-->
+
+        <!--moods-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/moods"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
+            android:padding="5dp"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -61,21 +63,58 @@
 
             <ImageButton
                 android:id="@+id/button_excited"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:background="@drawable/mood_buttons"
                 android:contentDescription="Excited"
-                android:scaleType="centerCrop"
-                android:src="@drawable/excited"/>
+                android:scaleType="centerInside"
+                android:src="@drawable/excited"
+                android:layout_margin="5dp"
+                android:padding="10dp"/>
 
             <ImageButton
                 android:id="@+id/button_happy"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:background="@drawable/mood_buttons"
-                android:contentDescription="Excited"
-                android:scaleType="centerCrop"
-                android:src="@drawable/happy"/>
+                android:contentDescription="Happy"
+                android:scaleType="centerInside"
+                android:src="@drawable/happy"
+                android:layout_margin="5dp"
+                android:padding="20dp"/>
+
+            <ImageButton
+                android:id="@+id/button_sad"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/mood_buttons"
+                android:contentDescription="Sad"
+                android:scaleType="centerInside"
+                android:src="@drawable/sad"
+                android:layout_margin="5dp"
+                android:padding="20dp"/>
+
+            <ImageButton
+                android:id="@+id/button_tired"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/mood_buttons"
+                android:contentDescription="Sad"
+                android:scaleType="centerInside"
+                android:src="@drawable/tired"
+                android:layout_margin="5dp"
+                android:padding="20dp"/>
+
+            <ImageButton
+                android:id="@+id/button_angry"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/mood_buttons"
+                android:contentDescription="Sad"
+                android:scaleType="centerInside"
+                android:src="@drawable/angry"
+                android:layout_margin="5dp"
+                android:padding="20dp"/>
         </LinearLayout>
 <!--buttons to activites-->
         <LinearLayout
