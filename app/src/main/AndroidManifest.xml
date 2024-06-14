@@ -13,6 +13,21 @@
         android:theme="@style/Theme.BeFreeApp"
         tools:targetApi="31">
         <activity
+            android:name=".DoctorSupport"
+            android:exported="false" />
+        <activity
+            android:name=".RelaxingMusic"
+            android:exported="false" />
+        <activity
+            android:name=".MindfulActivities"
+            android:exported="false" />
+        <activity
+            android:name=".Quotes"
+            android:exported="false" />
+        <activity
+            android:name=".QuotesPage"
+            android:exported="false" />
+        <activity
             android:name=".NewPassword"
             android:exported="false" />
         <activity
