@@ -10,12 +10,13 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        android:background="@color/pinkDark"
+        android:padding="10dp"
+        android:background="@drawable/dashboadback"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintCircleRadius="10dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
