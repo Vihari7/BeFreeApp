@@ -142,10 +142,10 @@
                         android:layout_marginTop="10dp"
                         android:textStyle="bold"
                         android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/musicImage"/>
+                        android:layout_below="@+id/motiveImage"/>
 
                     <ImageView
-                        android:id="@+id/musicImage"
+                        android:id="@+id/motiveImage"
                         android:layout_width="96dp"
                         android:layout_height="80dp"
                         android:layout_centerHorizontal="true"
