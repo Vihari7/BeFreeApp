@@ -21,7 +21,7 @@ public class Dashboard extends AppCompatActivity {
     private ImageButton buttonTired;
     private ImageButton buttonAngry;
 
-    private static final int SPLASH_DISPLAY_LENGTH = 3000;
+    static final int SPLASH_DISPLAY_LENGTH = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,7 +148,7 @@ public class Dashboard extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(Dashboard.this, Breathing.class));
+                startActivity(new Intent(Dashboard.this, Dashboard.class));
                 finish();
             }
         }, SPLASH_DISPLAY_LENGTH);

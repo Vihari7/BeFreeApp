@@ -1,7 +1,10 @@
 package com.viha.befreeapp;
 
+import static com.viha.befreeapp.Dashboard.SPLASH_DISPLAY_LENGTH;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -15,6 +18,7 @@ public class Breathing extends AppCompatActivity {
     private Handler handler = new Handler();
     private boolean isExpanding = true;
     private TextView breathingInstructions;
+    private int breathCycleCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class Breathing extends AppCompatActivity {
 
         handler.post(new Runnable() {
             public void run() {
+                if (breathCycleCount < 3) {
                 if (isExpanding) {
                     breathingInstructions.setText("Inhale");
                     animateCircle(1.0f, 1.5f, inhaleDuration);
@@ -46,10 +51,26 @@ public class Breathing extends AppCompatActivity {
                     handler.postDelayed(this, exhaleDuration);
                 }
                 isExpanding = !isExpanding;
+                if (!isExpanding) {
+                    breathCycleCount++;
+                }
+            } else {
+                    // After 3 cycles, show splash for JustRelax activity
+                    startActivity(new Intent(Breathing.this, JustRelax.class));
+
+                    // After splash duration, navigate to Dashboard
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(Breathing.this, Dashboard.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }, SPLASH_DISPLAY_LENGTH);
+                }
             }
         });
     }
-
     private void animateCircle(float fromScale, float toScale, int duration) {
         ScaleAnimation scaleAnimation = new ScaleAnimation(
                 fromScale, toScale, fromScale, toScale,

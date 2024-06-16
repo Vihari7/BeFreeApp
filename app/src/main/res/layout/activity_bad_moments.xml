@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/smileback"
     tools:context=".badMoments">
 
     <TextView
@@ -11,27 +12,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_marginTop="112dp"
+        android:fontFamily="casual"
         android:text="It's okay... "
-        android:textColor="@color/black"
+        android:textColor="#74C9EF"
         android:textSize="34sp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="120dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textMessage"
-        android:layout_width="276dp"
-        android:layout_height="273dp"
+        android:layout_width="210dp"
+        android:layout_height="248dp"
         android:layout_centerInParent="true"
+        android:layout_marginTop="128dp"
+        android:fontFamily="casual"
         android:text="Let's relax for a while"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="64sp"
+        android:textColor="@color/softBlueDark"
+        android:textSize="50sp"
         android:textStyle="bold|italic"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="229dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oktext"
+        app:layout_constraintVertical_bias="0.575"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
