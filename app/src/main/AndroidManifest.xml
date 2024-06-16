@@ -13,6 +13,29 @@
         android:theme="@style/Theme.BeFreeApp"
         tools:targetApi="31">
         <activity
+            android:name=".FiveSensesGame"
+            android:exported="false" />
+        <activity
+            android:name=".MatchPairs"
+            android:exported="false" />
+        <activity
+            android:name=".MindColoring"
+            android:exported="false" />
+        <activity
+            android:name=".BreathMind"
+            android:exported="false" />
+        <activity
+            android:name=".Meditation"
+            android:exported="false" />
+        <activity
+            android:name=".BreathMindActivity"
+            android:exported="false"
+            android:label="@string/title_activity_breath_mind"
+            android:theme="@style/Theme.BeFreeApp" />
+        <activity
+            android:name=".BodyScanMeditation"
+            android:exported="false" />
+        <activity
             android:name=".JustRelax"
             android:exported="false" />
         <activity

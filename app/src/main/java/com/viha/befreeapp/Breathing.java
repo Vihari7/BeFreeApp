@@ -50,11 +50,12 @@ public class Breathing extends AppCompatActivity {
                     animateCircle(1.5f, 1.0f, exhaleDuration);
                     handler.postDelayed(this, exhaleDuration);
                 }
-                isExpanding = !isExpanding;
-                if (!isExpanding) {
-                    breathCycleCount++;
+                    isExpanding = !isExpanding;
+                    if (!isExpanding) {
+                        breathCycleCount++;
+                    }
                 }
-            } else {
+                else {
                     // After 3 cycles, show splash for JustRelax activity
                     startActivity(new Intent(Breathing.this, JustRelax.class));
 
