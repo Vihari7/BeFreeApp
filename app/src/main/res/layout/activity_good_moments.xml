@@ -11,39 +11,38 @@
 
     <TextView
         android:id="@+id/goodtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="230dp"
+        android:layout_height="64dp"
         android:layout_centerInParent="true"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="156dp"
         android:fontFamily="casual"
         android:text="It's Glad to hear... "
         android:textColor="@color/softPinkLight"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/goodMessage"
-        android:layout_width="268dp"
-        android:layout_height="267dp"
+        android:layout_width="344dp"
+        android:layout_height="187dp"
         android:layout_centerInParent="true"
         android:layout_marginTop="180dp"
         android:fontFamily="casual"
         android:text="Let's Enjoy the Day"
         android:textAlignment="center"
         android:textColor="@color/pinkDark"
-        android:textSize="55sp"
+        android:textSize="50sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goodtext"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.101"
         tools:ignore="MissingConstraints" />
 
 
