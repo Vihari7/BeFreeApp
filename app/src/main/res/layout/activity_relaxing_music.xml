@@ -1,11 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="28dp"
-    android:background="@drawable/dashboadback"
-    tools:context=".RelaxingMusic">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/music_back"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/iv_track_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/heaven" />
+
+    <TextView
+        android:id="@+id/tv_track_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Track Title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/lavenderDark"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_track_duration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Track Duration"
+        app:tint="@color/lavenderLight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="15sp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_prev"
+            android:layout_marginRight="30dp"
+            android:contentDescription="@string/previous"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/lavender"/>
+
+        <ImageButton
+            android:id="@+id/btn_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_play"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/lavender"/>
+
+        <ImageButton
+            android:id="@+id/btn_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_pause"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:visibility="gone"
+            app:tint="@color/lavender"/>
+
+        <ImageButton
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/icon_next"
+            android:contentDescription="@string/next"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/lavender"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_tracks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+</LinearLayout>
