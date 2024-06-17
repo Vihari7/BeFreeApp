@@ -1,13 +1,16 @@
 package com.viha.befreeapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.os.Handler;
-import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Dashboard extends AppCompatActivity {
 
     private View quotesCard;
@@ -106,8 +109,35 @@ public class Dashboard extends AppCompatActivity {
                 showBadMomentsSplash();
             }
         });
+        // Initialize BottomNavigationView
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        // Already on the Dashboard
+                        return true;
+                    case R.id.nav_message:
+                        startActivity(new Intent(Dashboard.this, Messages.class));
+                        return true;
+                    case R.id.nav_notes:
+                        startActivity(new Intent(Dashboard.this, Notes.class));
+                        return true;
+                    case R.id.nav_profile:
+                        startActivity(new Intent(Dashboard.this, Profile.class));
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
 
-}
+        // Select the home item by default
+        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+    }
+
+
 
     private void openQuotesActivity() {
         Intent intent = new Intent(Dashboard.this, Quotes.class);
