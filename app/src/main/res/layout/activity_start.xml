@@ -64,14 +64,14 @@
 
     <Button
         android:id="@+id/start_button"
-        android:layout_width="wrap_content"
-        android:layout_height="58dp"
+        android:layout_width="204dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/sub_title"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="351dp"
-        android:layout_marginEnd="125dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="111dp"
         android:backgroundTint="@color/blueButton"
         android:text="GET STARTING"
         android:textColor="#FFFFFF" />
@@ -84,10 +84,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="110dp"
-        android:layout_marginBottom="125dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="117dp"
         android:text="Already have an Account?"
         android:textColor="@color/blueDarkest"
         android:textSize="16sp"
@@ -95,6 +95,4 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="115dp"
         tools:layout_editor_absoluteY="366dp" />
-
-
 </RelativeLayout>

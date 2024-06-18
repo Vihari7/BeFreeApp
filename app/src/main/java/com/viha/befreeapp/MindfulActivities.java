@@ -16,10 +16,10 @@ public class MindfulActivities extends AppCompatActivity {
         setContentView(R.layout.activity_mindful_activities);
 
         CardView mindfulBreathingCard = findViewById(R.id.breathButton);
-        CardView bodyScanMeditationCard = findViewById(R.id.mediButton);
+        CardView bodyScanMeditationCard = findViewById(R.id.bodyscanButton);
         CardView mindfulnessColoringCard = findViewById(R.id.coloringButton);
         CardView matchingPairsCard = findViewById(R.id.pairButton);
-        CardView fiveSensesGameCard = findViewById(R.id.fSenseButton);
+        CardView fiveSensesGameCard = findViewById(R.id.fivesensesButton);
 
         mindfulBreathingCard.setOnClickListener(new View.OnClickListener() {
             @Override

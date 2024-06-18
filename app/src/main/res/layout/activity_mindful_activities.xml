@@ -15,7 +15,7 @@
         android:layout_marginTop="10dp">
 
     <TextView
-        android:id="@+id/mindfText"
+        android:id="@+id/mindfull_act_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Mindfulness Activites"
@@ -38,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mindfText">
+        app:layout_constraintTop_toBottomOf="@id/mindfull_act_text">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -90,7 +90,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:id="@+id/mediButton"
+            android:id="@+id/bodyscanButton"
             android:layout_weight="1"
             app:cardElevation="20dp"
             app:cardCornerRadius="20dp">
@@ -226,7 +226,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/fSenseButton"
+                android:id="@+id/fivesensesButton"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardElevation="20dp"
@@ -238,7 +238,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/fivesName"
+                        android:id="@+id/five_sense_Name"
                         android:text="Five Senses Game"
                         android:textSize="20sp"
                         android:textColor="@color/pinkDark"
