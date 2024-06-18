@@ -36,6 +36,11 @@
         android:text="Track Duration"
         app:tint="@color/lavenderLight"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
 
     <LinearLayout
         android:layout_width="match_parent"

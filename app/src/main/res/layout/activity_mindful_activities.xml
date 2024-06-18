@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="25dp"
-    android:background="@drawable/dashboadback"
+    android:background="@drawable/mindfull_activity_back"
     tools:context=".MindfulActivities">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -51,27 +51,24 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/mindful_breath_img">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/breathText"
-                    android:text="Mindful Breathing"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/pinkDark"
+                    android:layout_width="186dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="88dp"
                     android:layout_marginTop="10dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/breathImage"/>
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:id="@+id/breathImage"
-                    android:src="@drawable/life"
-                    android:layout_marginTop="15dp"
-                    android:layout_centerHorizontal="true"/>
+                    android:layout_marginEnd="64dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="Mindful Breathing"
+                    android:textColor="@color/pinkDark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
@@ -99,26 +96,28 @@
             app:cardCornerRadius="20dp">
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/motiveText"
-                    android:text="Body Scan Meditation"
-                    android:textSize="20sp"
-                    android:textColor="@color/pinkDark"
-                    android:layout_marginTop="10dp"
-                    android:textStyle="bold"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/motiveImage"/>
+                android:layout_height="match_parent"
+                android:background="@drawable/body_scan_img">
 
-                <ImageView
-                    android:id="@+id/motiveImage"
-                    android:layout_width="96dp"
-                    android:layout_height="80dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/motive" />
+                <TextView
+                    android:id="@+id/motiveText"
+                    android:layout_width="242dp"
+                    android:layout_height="49dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="93dp"
+                    android:layout_marginEnd="49dp"
+                    android:layout_marginBottom="-16dp"
+                    android:text="Body Scan Meditation"
+                    android:textAlignment="center"
+                    android:textColor="@color/softPinkLight"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -146,25 +145,24 @@
             app:cardCornerRadius="20dp">
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/coloring_img">
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/colorName"
-                    android:text="Mindfulness Coloring"
-                    android:textSize="20sp"
-                    android:textColor="@color/pinkDark"
-                    android:textStyle="bold"
+                    android:layout_width="221dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="74dp"
                     android:layout_marginTop="10dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/colorImage"/>
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:id="@+id/colorImage"
-                    android:layout_marginTop="15dp"
-                    android:src="@drawable/education"
-                    android:layout_centerHorizontal="true"/>
+                    android:layout_marginEnd="42dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Mindfulness Coloring"
+                    android:textColor="@color/softPinkLight"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -191,25 +189,24 @@
                 app:cardCornerRadius="20dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@drawable/match_pair_img">
+
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/pairName"
-                        android:text="Matching Pairs"
-                        android:textSize="20sp"
-                        android:textColor="@color/pinkDark"
-                        android:textStyle="bold"
+                        android:layout_width="158dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="96dp"
                         android:layout_marginTop="10dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/pairImage"/>
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:id="@+id/pairImage"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/education"
-                        android:layout_centerHorizontal="true"/>
+                        android:layout_marginEnd="85dp"
+                        android:layout_marginBottom="6dp"
+                        android:text="Matching Pairs"
+                        android:textColor="@color/pinkDark"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -236,7 +233,8 @@
                 app:cardCornerRadius="20dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@drawable/five_senses_img">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -247,14 +245,8 @@
                         android:textStyle="bold"
                         android:layout_marginTop="10dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/fivesImage"/>
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:id="@+id/fivesImage"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/education"
-                        android:layout_centerHorizontal="true"/>
+                        android:layout_alignParentBottom="true"/>
+
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
