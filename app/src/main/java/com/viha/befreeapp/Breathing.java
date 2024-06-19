@@ -56,7 +56,7 @@ public class Breathing extends AppCompatActivity {
                     }
                 }
                 else {
-                    // After 3 cycles, show splash for JustRelax activity
+                    // After 3 cycles, show splash for JustRelax page
                     startActivity(new Intent(Breathing.this, JustRelax.class));
 
                     // After splash duration, navigate to Dashboard

@@ -24,7 +24,7 @@ public class MindfulActivities extends AppCompatActivity {
         mindfulBreathingCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MindfulActivities.this, BreathMind.class);
+                Intent intent = new Intent(MindfulActivities.this, BreathInstruction_MindAct.class);
                 startActivity(intent);
             }
         });

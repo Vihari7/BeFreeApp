@@ -110,7 +110,7 @@ public class Dashboard extends AppCompatActivity {
                 showBadMomentsSplash();
             }
         });
-        // Initialize BottomNavigationView
+        // Initialize Bottom NavigationView
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -137,7 +137,7 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-        // Select the home item by default
+        // Select the dashboard by default
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
     }
 
