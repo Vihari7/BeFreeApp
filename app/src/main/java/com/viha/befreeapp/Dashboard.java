@@ -3,6 +3,7 @@ package com.viha.befreeapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -123,6 +124,9 @@ public class Dashboard extends AppCompatActivity {
                         return true;
                     case R.id.nav_notes:
                         startActivity(new Intent(Dashboard.this, Notes.class));
+                        return true;
+                    case R.id.nav_notification:
+                        startActivity(new Intent(Dashboard.this, Notification.class));
                         return true;
                     case R.id.nav_profile:
                         startActivity(new Intent(Dashboard.this, Profile.class));

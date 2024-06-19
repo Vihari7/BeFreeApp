@@ -10,7 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="30dp">
+        android:padding="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/welcomeText" />
 
-        <!--moods-->
+        <!--logo-->
 
         <ImageView
             android:id="@+id/logoImage"
@@ -56,73 +56,72 @@
             app:layout_constraintBottom_toBottomOf="@+id/welcomeDesc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
+        <!--moods-->
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/moods"
-            android:orientation="horizontal"
+            android:layout_width="343dp"
+            android:layout_height="71dp"
             android:layout_marginTop="40dp"
-            android:padding="1dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/logoImage">
 
             <ImageButton
                 android:id="@+id/button_excited"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_margin="5dp"
+                android:layout_margin="4dp"
                 android:background="@drawable/mood_buttons"
                 android:contentDescription="Excited"
+                android:padding="2dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/excited"
-                android:padding="2dp"/>
+                android:src="@drawable/excited" />
 
             <ImageButton
                 android:id="@+id/button_happy"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_margin="4dp"
                 android:background="@drawable/mood_buttons"
                 android:contentDescription="Happy"
+                android:padding="2dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/happy"
-                android:layout_margin="5dp"
-                android:padding="2dp"/>
+                android:src="@drawable/happy" />
 
             <ImageButton
                 android:id="@+id/button_sad"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_margin="4dp"
                 android:background="@drawable/mood_buttons"
                 android:contentDescription="Sad"
+                android:padding="2dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/sad"
-                android:layout_margin="5dp"
-                android:padding="2dp"/>
+                android:src="@drawable/sad" />
 
             <ImageButton
                 android:id="@+id/button_tired"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_margin="4dp"
                 android:background="@drawable/mood_buttons"
                 android:contentDescription="Sad"
+                android:padding="2dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/tired"
-                android:layout_margin="5dp"
-                android:padding="2dp"/>
+                android:src="@drawable/tired" />
 
             <ImageButton
                 android:id="@+id/button_angry"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_margin="4dp"
                 android:background="@drawable/mood_buttons"
-                android:contentDescription="Sad"
+                android:padding="2dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/angry"
-                android:layout_margin="5dp"
-                android:padding="2dp"/>
+                android:src="@drawable/angry" />
         </LinearLayout>
 <!--buttons to activites-->
         <LinearLayout
@@ -148,8 +147,8 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -178,7 +177,8 @@
                 app:cardCornerRadius="20dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
 
                     <TextView
                         android:id="@+id/mindText"
@@ -187,6 +187,7 @@
                         android:layout_below="@+id/mindactImage"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="5dp"
+                        android:foregroundGravity="center"
                         android:gravity="center"
                         android:text="Mindful Activities"
                         android:textColor="@color/softBlueDarker"
@@ -223,17 +224,22 @@
                 app:cardCornerRadius="20dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
                     <TextView
+                        android:id="@+id/musicText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/musicText"
-                        android:text="Relaxing Music"
-                        android:textSize="20sp"
-                        android:textColor="@color/softBlueDarker"
-                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/musicImage"
+                        android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/musicImage"/>
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="18dp"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:text="Relaxing Music"
+                        android:textColor="@color/softBlueDarker"
+                        android:textSize="20sp" />
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
@@ -252,18 +258,24 @@
                 app:cardCornerRadius="20dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/docText"
-                        android:text="Doctor Support"
-                        android:textSize="20sp"
-                        android:textColor="@color/softBlueDarker"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
 
-                        android:layout_marginTop="10dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/docImage"/>
+                    <TextView
+                        android:id="@+id/docText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/docImage"
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:text="Doctor Support"
+                        android:textColor="@color/softBlueDarker"
+                        android:textSize="20sp" />
+
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
@@ -276,19 +288,6 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-<!--    notification button-->
-    <ImageButton
-        android:id="@+id/notificationButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icon_notification"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Notifications"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        app:tint="@color/blueButton" />
 
     <!-- Bottom Navigation Bar -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

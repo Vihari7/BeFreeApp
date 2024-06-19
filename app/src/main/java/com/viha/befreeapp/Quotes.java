@@ -6,60 +6,59 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
-import android.widget.ImageView;
+import androidx.cardview.widget.CardView;
 
 public class Quotes extends AppCompatActivity {
-    private ImageView lifeImage, loveImage, motiveImage, healthImage, eduImage, selfImage;
-
+    private CardView  lifeCard, loveCard, motiveCard, healthCard, eduCard, selfCard;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quotes);
 
-        lifeImage = findViewById(R.id.lifeImage);
-        loveImage = findViewById(R.id.loveImage);
-        motiveImage = findViewById(R.id.motiveImage);
-        healthImage = findViewById(R.id.healthImage);
-        eduImage = findViewById(R.id.eduImage);
-        selfImage = findViewById(R.id.selfImage);
+        lifeCard = findViewById(R.id.lifeCard);
+        loveCard = findViewById(R.id.loveCard);
+        motiveCard = findViewById(R.id.motiveCard);
+        healthCard = findViewById(R.id.healthCard);
+        eduCard = findViewById(R.id.eduCard);
+        selfCard = findViewById(R.id.selfCard);
 
-        lifeImage.setOnClickListener(new View.OnClickListener() {
+        lifeCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGallery("Life");
             }
         });
 
-        loveImage.setOnClickListener(new View.OnClickListener() {
+        loveCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGallery("Love");
             }
         });
 
-        motiveImage.setOnClickListener(new View.OnClickListener() {
+        motiveCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGallery("Motivation");
             }
         });
 
-        healthImage.setOnClickListener(new View.OnClickListener() {
+        healthCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGallery("Health");
             }
         });
 
-        eduImage.setOnClickListener(new View.OnClickListener() {
+        eduCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGallery("Education");
             }
         });
 
-        selfImage.setOnClickListener(new View.OnClickListener() {
+        selfCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGallery("Self Love");
