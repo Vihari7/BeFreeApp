@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,40 +28,40 @@ public class Profile extends AppCompatActivity {
         name = findViewById(R.id.tvName);
         email = findViewById(R.id.tvEmail);
 
-        profilePicture.setOnClickListener(view -> editProfilePicture());
-        name.setOnClickListener(view -> editName());
-        email.setOnClickListener(view -> editEmail());
+        View.OnClickListener editProfileListener = view -> showEditProfileDialog();
+
+        profilePicture.setOnClickListener(editProfileListener);
+        name.setOnClickListener(editProfileListener);
+        email.setOnClickListener(editProfileListener);
     }
 
-    private void editProfilePicture() {
-        // for profile picture editing
-        Toast.makeText(this, "Edit Profile Picture Clicked", Toast.LENGTH_SHORT).show();
-    }
-
-    private void editName() {
-        showEditDialog("Edit Name", name);
-    }
-
-    private void editEmail() {
-        showEditDialog("Edit Email", email);
-    }
-
-    private void showEditDialog(String title, TextView textView) {
+    private void showEditProfileDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(title);
+        builder.setTitle("Edit Profile");
 
-        View viewInflated = LayoutInflater.from(this).inflate(R.layout.dialog_edit_profile, (ViewGroup) findViewById(android.R.id.content), false);
-        final EditText input = viewInflated.findViewById(R.id.etInput);
-        input.setText(textView.getText().toString());
+        View viewInflated = LayoutInflater.from(this).inflate(R.layout.dialog_edit_profile, (ViewGroup)
+                findViewById(android.R.id.content), false);
+        final ImageView editProfilePicture = viewInflated.findViewById(R.id.edit_profile_picture);
+        final EditText editName = viewInflated.findViewById(R.id.edit_name);
+        final EditText editEmail = viewInflated.findViewById(R.id.edit_email);
+        Button saveButton = viewInflated.findViewById(R.id.save_button);
+
+        // Pre-fill the fields with the current values
+        editName.setText(name.getText().toString());
+        editEmail.setText(email.getText().toString());
 
         builder.setView(viewInflated);
 
-        builder.setPositiveButton(android.R.string.ok, (dialog, which) -> {
-            dialog.dismiss();
-            textView.setText(input.getText().toString());
-        });
-        builder.setNegativeButton(android.R.string.cancel, (dialog, which) -> dialog.cancel());
+        AlertDialog dialog = builder.create();
 
-        builder.show();
+        saveButton.setOnClickListener(v -> {
+            // Save the new values
+            name.setText(editName.getText().toString());
+            email.setText(editEmail.getText().toString());
+            // Handle profile picture update here if needed
+            dialog.dismiss();
+        });
+
+        dialog.show();
     }
 }
