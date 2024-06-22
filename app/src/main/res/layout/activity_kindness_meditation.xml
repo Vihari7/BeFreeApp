@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mindfull_activity_back"
+    tools:context=".KindnessMeditation">
+
+    <TextView
+        android:id="@+id/kindness_medi_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/videoView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="-5dp"
+        android:layout_marginBottom="126dp"
+        android:gravity="center"
+        android:text="Loving-Kindness Meditation"
+        android:textColor="@color/lavenderDark"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/description_kindmedi_text"
+        android:layout_width="409dp"
+        android:layout_height="52dp"
+        android:layout_above="@+id/videoView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="38dp"
+        android:gravity="center"
+        android:text="This meditation helps to increases your compassion and reduces negative emotions"
+        android:textColor="@color/lavender"
+        android:textSize="15sp" />
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="321dp"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/playPauseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/videoView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Play" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/playPauseButton"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seekBar"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:text="00:00 / 00:00" />
+
+</RelativeLayout>

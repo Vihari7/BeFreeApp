@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrisisSupport">
+
+    <TextView
+        android:id="@+id/tvCrisisSupportTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Crisis Support"
+        android:textSize="25sp"
+        android:textColor="@color/softBlueDark"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnCallHelpline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Call Helpline"
+        android:layout_below="@id/tvCrisisSupportTitle"
+        android:layout_marginTop="24dp"
+        android:padding="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <Button
+        android:id="@+id/btnChatSupport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chat Support"
+        android:layout_below="@id/btnCallHelpline"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/tvHotlineNumbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnChatSupport"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="Hotline Numbers: National Institute of Mental Health,\nSri Lanka.\n  National Mental Health Helpline: 1926 \n  Dementia Hotline: +94113140844"
+        android:textSize="15dp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/websiteText"
+        android:layout_width="362dp"
+        android:layout_height="37dp"
+        android:layout_below="@id/tvHotlineNumbers"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/softBlue"
+        android:text="Visite National Institute of Mental Health, Sri Lanka"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/btnVisitWebsite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/websiteText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="16dp"
+        android:text="Visit Website" />
+
+
+</RelativeLayout>

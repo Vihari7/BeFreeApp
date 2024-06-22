@@ -11,8 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Dashboard extends AppCompatActivity {
+
 
     private View quotesCard;
     private View mindActCard;
@@ -44,6 +46,7 @@ public class Dashboard extends AppCompatActivity {
         buttonSad = findViewById(R.id.button_sad);
         buttonTired = findViewById(R.id.button_tired);
         buttonAngry = findViewById(R.id.button_angry);
+
 
 
         // Set onClickListeners for activity cards
@@ -110,6 +113,8 @@ public class Dashboard extends AppCompatActivity {
                 showBadMomentsSplash();
             }
         });
+
+
         // Initialize Bottom NavigationView
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -139,6 +144,8 @@ public class Dashboard extends AppCompatActivity {
 
         // Select the dashboard by default
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
+
+
     }
 
 
@@ -186,5 +193,8 @@ public class Dashboard extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
+
+
     }
+
 }
