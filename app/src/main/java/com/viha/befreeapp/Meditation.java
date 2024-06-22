@@ -13,7 +13,6 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 public class Meditation extends AppCompatActivity {
-
     private TextView timerTextView;
     private Button startButton;
     private ImageView playIcon;
@@ -124,7 +123,8 @@ public class Meditation extends AppCompatActivity {
 
     private void playVideo() {
         videoView.setVisibility(View.VISIBLE);
-        Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.body_scan_medi); // meditation video
+        Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" +
+                R.raw.body_scan_medi); // meditation video
         videoView.setVideoURI(videoUri);
         videoView.start();
         playIcon.setVisibility(View.GONE);

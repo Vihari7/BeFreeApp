@@ -13,7 +13,6 @@ import android.view.animation.Animation;
 import android.widget.TextView;
 
 public class Breathing extends AppCompatActivity {
-
     private View circleView;
     private Handler handler = new Handler();
     private boolean isExpanding = true;

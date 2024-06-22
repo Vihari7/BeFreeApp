@@ -57,7 +57,8 @@ public class FullscreenImageActivity extends AppCompatActivity {
         }
         File imagePath = new File(getCacheDir(), "images");
         File newFile = new File(imagePath, "image.png");
-        Uri contentUri = FileProvider.getUriForFile(this, "com.viha.befreeapp.fileprovider", newFile);
+        Uri contentUri = FileProvider.getUriForFile(this, "com.viha.befreeapp.fileprovider",
+                newFile);
 
         if (contentUri != null) {
             Intent shareIntent = new Intent();
@@ -70,7 +71,8 @@ public class FullscreenImageActivity extends AppCompatActivity {
     }
 
     private Bitmap drawableToBitmap(Drawable drawable) {
-        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(),
+                Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
         drawable.draw(canvas);

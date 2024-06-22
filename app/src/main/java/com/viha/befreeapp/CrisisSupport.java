@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.net.Uri;
 
 public class CrisisSupport extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

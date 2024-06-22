@@ -35,8 +35,6 @@ public class NearbyMedicalFacilities extends AppCompatActivity {
                getPath(startingPoint,endPoint);
            }
        });
-
-
     }
 
     private void getPath(String startingPoint, String endPoint) {

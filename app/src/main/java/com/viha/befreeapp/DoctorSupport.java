@@ -69,5 +69,4 @@ public class DoctorSupport extends AppCompatActivity {
         Intent intent = new Intent(this, CrisisSupport.class);
         startActivity(intent);
     }
-
 }

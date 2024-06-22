@@ -8,7 +8,7 @@
     tools:context=".JustRelax">
 
     <TextView
-        android:id="@+id/relaxText"
+        android:id="@+id/tvRelax"
         android:layout_width="247dp"
         android:layout_height="132dp"
         android:layout_marginTop="104dp"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/smileText"
+        android:id="@+id/tvSmile"
         android:layout_width="325dp"
         android:layout_height="49dp"
         android:layout_marginTop="316dp"
@@ -38,10 +38,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/relaxText" />
+        app:layout_constraintTop_toTopOf="@id/tvRelax" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvSupport"
         android:layout_width="294dp"
         android:layout_height="100dp"
         android:layout_marginTop="76dp"
@@ -54,5 +54,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/smileText" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSmile" />
 </androidx.constraintlayout.widget.ConstraintLayout>

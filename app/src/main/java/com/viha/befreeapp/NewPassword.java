@@ -27,14 +27,16 @@ public class NewPassword extends AppCompatActivity {
 
                 if (newPassword.equals(confirmPassword)) {
                     // Save the new password (implement your saving logic here)
-                    Toast.makeText(NewPassword.this, "Password Changed Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewPassword.this, "Password Changed Successfully",
+                            Toast.LENGTH_SHORT).show();
 
                     // Navigate to Dashboard activity after saving the password
                     Intent intent = new Intent(NewPassword.this, Dashboard.class);
                     startActivity(intent);
                     finish();
                 } else {
-                    Toast.makeText(NewPassword.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewPassword.this, "Passwords do not match",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
         });

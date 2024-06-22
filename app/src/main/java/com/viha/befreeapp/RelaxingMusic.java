@@ -22,9 +22,12 @@ public class RelaxingMusic extends AppCompatActivity {
     private TextView tvTrackTitle;
     private ListView lvTracks;
     private int currentTrackIndex = 0;
-    private int[] tracks = {R.raw.heaven, R.raw.meditation, R.raw.galaxy,R.raw.stasi,R.raw.down_days,R.raw.time_alone,R.raw.beauty_of_russia,R.raw.rolling_hills_of_ireland,R.raw.gifts,R.raw.quite_time}; // Add track resources here
-    private String[] trackTitles = {"Heaven - David Fesliyan", "Meditation - David Fesliyan", "Galaxy - Endless Expanse","Stasis - Steve Oxen","Down Days - David Renda","Time Alone - David Renda","Beauty Of Russia - Fesliyan","Rolling Hills Of Ireland","Glistening Gifts - Fesliyan","Quiet Time - David Fesliyan"}; // Add  track titles here
-    private int[] trackImages = {R.drawable.heaven, R.drawable.meditation, R.drawable.galaxy,R.drawable.statis,R.drawable.down_days,R.drawable.time_alone,R.drawable.russia,R.drawable.rolling_hills,R.drawable.gifts,R.drawable.quite_time}; // Add track images here
+    private int[] tracks =
+            {R.raw.heaven, R.raw.meditation, R.raw.galaxy,R.raw.stasi,R.raw.down_days,R.raw.time_alone,R.raw.beauty_of_russia,R.raw.rolling_hills_of_ireland,R.raw.gifts,R.raw.quite_time}; // Add track resources here
+    private String[] trackTitles =
+            {"Heaven - David Fesliyan", "Meditation - David Fesliyan", "Galaxy - Endless Expanse","Stasis - Steve Oxen","Down Days - David Renda","Time Alone - David Renda","Beauty Of Russia - Fesliyan","Rolling Hills Of Ireland","Glistening Gifts - Fesliyan","Quiet Time - David Fesliyan"}; // Add  track titles here
+    private int[] trackImages =
+            {R.drawable.heaven, R.drawable.meditation, R.drawable.galaxy,R.drawable.statis,R.drawable.down_days,R.drawable.time_alone,R.drawable.russia,R.drawable.rolling_hills,R.drawable.gifts,R.drawable.quite_time}; // Add track images here
     private TextView tvTrackDuration;
     private SeekBar seekBar;
     private Handler handler = new Handler();
@@ -74,7 +77,8 @@ public class RelaxingMusic extends AppCompatActivity {
             }
         });
 
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, trackTitles);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                    android.R.layout.simple_list_item_1, trackTitles);
         lvTracks.setAdapter(adapter);
 
         lvTracks.setOnItemClickListener(new AdapterView.OnItemClickListener() {

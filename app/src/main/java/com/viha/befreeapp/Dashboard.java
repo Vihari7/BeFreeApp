@@ -14,8 +14,6 @@ import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Dashboard extends AppCompatActivity {
-
-
     private View quotesCard;
     private View mindActCard;
     private View musicCard;
@@ -34,7 +32,7 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        // Initialize card views
+        // Initialize card views of activities
         quotesCard = findViewById(R.id.activityButtons);
         mindActCard = findViewById(R.id.mindText);
         musicCard = findViewById(R.id.musicText);
@@ -46,8 +44,6 @@ public class Dashboard extends AppCompatActivity {
         buttonSad = findViewById(R.id.button_sad);
         buttonTired = findViewById(R.id.button_tired);
         buttonAngry = findViewById(R.id.button_angry);
-
-
 
         // Set onClickListeners for activity cards
         quotesCard.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +110,6 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-
         // Initialize Bottom NavigationView
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -144,11 +139,7 @@ public class Dashboard extends AppCompatActivity {
 
         // Select the dashboard by default
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
-
-
     }
-
-
 
     private void openQuotesActivity() {
         Intent intent = new Intent(Dashboard.this, Quotes.class);
@@ -193,8 +184,5 @@ public class Dashboard extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
-
-
     }
-
 }
