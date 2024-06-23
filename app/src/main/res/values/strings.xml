@@ -11,5 +11,9 @@
     <string name="lorem_ipsum">
         fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-
+    <!-- Circular shape appearance for edit profile -->
+    <style name="ShapeAppearanceOverlay.App.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

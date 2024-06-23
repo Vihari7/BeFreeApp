@@ -1,8 +1,6 @@
 package com.viha.befreeapp;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,16 +9,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Profile extends AppCompatActivity {
+
     private ImageView profilePicture;
     private TextView name;
     private TextView email;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
@@ -39,8 +38,7 @@ public class Profile extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Edit Profile");
 
-        View viewInflated = LayoutInflater.from(this).inflate(R.layout.dialog_edit_profile, (ViewGroup)
-                findViewById(android.R.id.content), false);
+        View viewInflated = LayoutInflater.from(this).inflate(R.layout.dialog_edit_profile, (ViewGroup) findViewById(android.R.id.content), false);
         final ImageView editProfilePicture = viewInflated.findViewById(R.id.edit_profile_picture);
         final EditText editName = viewInflated.findViewById(R.id.edit_name);
         final EditText editEmail = viewInflated.findViewById(R.id.edit_email);
