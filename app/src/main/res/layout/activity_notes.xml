@@ -1,9 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/diary_back"
     tools:context=".Notes">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:focusedMonthDateColor="#FFFFFF"
+        android:selectedWeekBackgroundColor="#D4DADF"
+        android:unfocusedMonthDateColor="#E7EAFB"
+        android:weekNumberColor="#FAFDFF"
+        android:weekSeparatorLineColor="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/noteEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calendarView"
+        android:hint="Write your notes here"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="10"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp" />
+
+    <LinearLayout
+        android:id="@+id/colorLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/noteEditText"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/colorRedButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/holo_red_light" />
+
+        <Button
+            android:id="@+id/colorGreenButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/holo_green_light"
+            android:layout_marginLeft="10dp" />
+
+        <Button
+            android:id="@+id/colorBlueButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/holo_blue_light"
+            android:layout_marginLeft="10dp" />
+        <Button
+            android:id="@+id/colorYellowButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#F1ECC1"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/colorLayout"
+        android:layout_marginTop="16dp"
+        android:text="Save Note" />
+
+    <Button
+        android:id="@+id/viewHistoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="View History"
+        android:layout_below="@id/colorLayout"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>
