@@ -114,7 +114,7 @@
                     android:layout_marginBottom="-16dp"
                     android:text="Body Scan Meditation"
                     android:textAlignment="center"
-                    android:textColor="@color/lavenderDark"
+                    android:textColor="@color/lavenderLight"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -138,7 +138,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/pairButton"
+                android:id="@+id/walkButton"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardElevation="20dp"
@@ -147,11 +147,11 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/match_pair_img"
+                    android:background="@drawable/walk_btn_back"
                     android:gravity="center">
 
                     <TextView
-                        android:id="@+id/pairName"
+                        android:id="@+id/walkText"
                         android:layout_width="204dp"
                         android:layout_height="48dp"
                         android:layout_alignParentStart="true"
@@ -163,8 +163,8 @@
                         android:layout_marginEnd="60dp"
                         android:layout_marginBottom="-6dp"
                         android:gravity="center"
-                        android:text="Matching Pairs"
-                        android:textColor="@color/lavenderDarker"
+                        android:text="Mindful Walking"
+                        android:textColor="@color/lavenderLightest"
                         android:textSize="20sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -209,57 +209,11 @@
                     android:layout_marginBottom="4dp"
                     android:gravity="center"
                     android:text="Loving Kindness Meditation "
-                    android:textColor="@color/lavenderDark"
+                    android:textColor="@color/lavenderLight"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/row5"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/row4">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fivesensesButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="20dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/five_senses_img">
-
-                    <TextView
-                        android:id="@+id/five_sense_Name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:text="Five Senses Game"
-                        android:textColor="@color/lavenderDarker"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

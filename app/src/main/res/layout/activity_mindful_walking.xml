@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/walk_background"
+    android:padding="16dp"
+    tools:context=".MindfulWalking">
+
+    <TextView
+        android:id="@+id/topicTitle"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:paddingBottom="20dp"
+        android:text="Mindful Walking"
+        android:textColor="#4CAF50"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/instructionImage"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:contentDescription="Mindful Walking"
+        android:src="@drawable/walk_img" />
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="18dp"
+        android:text="Instructions:\n\nWalk slowly and pay attention to each step.\n\nNotice the sensation of your feet touching the ground, the movement of your legs, and your surroundings."
+        android:textColor="#0F6A12"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/stepCount"
+        android:layout_width="364dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="25dp"
+        android:text="Steps: 0"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Here you can count your steps while you walk mindfully. \n\nEnjoy the gentle music playing as you walk."
+        android:textColor="#255327"
+        android:textSize="16sp"
+        android:textStyle="bold|italic" />
+
+
+</LinearLayout>

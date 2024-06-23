@@ -67,7 +67,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/blueButton"
         android:padding="15dp"
-        android:text="Sign Up"
+        android:text="SIGN UP"
         android:textColor="@color/white"
         android:textSize="20dp" />
 

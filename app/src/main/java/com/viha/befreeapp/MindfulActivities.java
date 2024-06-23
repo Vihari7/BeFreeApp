@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
-import android.widget.ImageView;
 import androidx.cardview.widget.CardView;
 
 public class MindfulActivities extends AppCompatActivity {
@@ -17,10 +16,10 @@ public class MindfulActivities extends AppCompatActivity {
 
         CardView mindfulBreathingCard = findViewById(R.id.breathButton);
         CardView bodyScanMeditationCard = findViewById(R.id.bodyscanButton);
-        CardView matchingPairsCard = findViewById(R.id.pairButton);
-        CardView mindfulnessColoringCard = findViewById(R.id.kindMedButton);
-        CardView fiveSensesGameCard = findViewById(R.id.fivesensesButton);
+        CardView matchingWalkCard = findViewById(R.id.walkButton);
+        CardView kindMedtationCard = findViewById(R.id.kindMedButton);
 
+        // link to pages of mindful activity categories
         mindfulBreathingCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +37,7 @@ public class MindfulActivities extends AppCompatActivity {
             }
         });
 
-        mindfulnessColoringCard.setOnClickListener(new View.OnClickListener() {
+        kindMedtationCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MindfulActivities.this, KindnessMeditation.class);
@@ -46,20 +45,13 @@ public class MindfulActivities extends AppCompatActivity {
             }
         });
 
-        matchingPairsCard.setOnClickListener(new View.OnClickListener() {
+        matchingWalkCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MindfulActivities.this, MatchPairs.class);
+                Intent intent = new Intent(MindfulActivities.this,MindfulWalking.class);
                 startActivity(intent);
             }
         });
 
-        fiveSensesGameCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MindfulActivities.this, FiveSensesGame.class);
-                startActivity(intent);
-            }
-        });
     }
 }
