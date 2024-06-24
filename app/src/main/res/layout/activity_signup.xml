@@ -38,27 +38,53 @@
         android:padding="10dp"
         android:textColor="@color/blueButton" />
 
-    <EditText
-        android:id="@+id/editPassword"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordTextInput"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@drawable/round_edittext"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:textColor="@color/blueButton" />
+        app:boxStrokeColor="@color/blueButton"
+        app:boxStrokeWidth="2dp"
+        app:endIconMode="password_toggle"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/blueButton">
 
-    <EditText
-        android:id="@+id/editConfirmPassword"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_edittext"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="@color/blueButton" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmPasswordTextInput"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@drawable/round_edittext"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:textColor="@color/blueButton" />
+        app:boxStrokeColor="@color/blueButton"
+        app:boxStrokeWidth="2dp"
+        app:endIconMode="password_toggle"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/blueButton">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_edittext"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="@color/blueButton" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonSignup"
@@ -69,8 +95,7 @@
         android:padding="15dp"
         android:text="SIGN UP"
         android:textColor="@color/white"
-        android:textSize="20dp" />
-
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/linkToLogin"
@@ -84,4 +109,5 @@
         android:textAlignment="gravity"
         android:textColor="@color/blueDarkest"
         android:textStyle="bold" />
+
 </LinearLayout>

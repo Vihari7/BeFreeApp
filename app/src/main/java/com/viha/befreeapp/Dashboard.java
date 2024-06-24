@@ -11,8 +11,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class Dashboard extends AppCompatActivity {
     private View quotesCard;
     private View mindActCard;
@@ -32,6 +35,8 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        FirebaseApp.initializeApp(this);
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         // Initialize card views of activities
         quotesCard = findViewById(R.id.activityButtons);
         mindActCard = findViewById(R.id.mindText);
