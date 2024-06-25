@@ -24,12 +24,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/calendarView"
-        android:hint="Write your notes here"
+        android:background="@android:drawable/edit_text"
         android:gravity="top"
+        android:hint="Write your thoughts here"
         android:inputType="textMultiLine"
         android:lines="10"
-        android:background="@android:drawable/edit_text"
-        android:padding="10dp" />
+        android:padding="10dp"
+        android:textColor="#100C0C"
+        android:textColorHighlight="#120E0E"
+        android:textColorHint="#1D2347" />
 
     <LinearLayout
         android:id="@+id/colorLayout"
@@ -58,12 +61,6 @@
             android:layout_height="40dp"
             android:background="@android:color/holo_blue_light"
             android:layout_marginLeft="10dp" />
-        <Button
-            android:id="@+id/colorYellowButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="#F1ECC1"
-            android:layout_marginLeft="10dp" />
     </LinearLayout>
 
     <Button
@@ -73,17 +70,20 @@
         android:layout_below="@id/colorLayout"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/blueButton"
-        android:text="Save Note" />
+        android:text="Save Note"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/viewHistoryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:text="View History"
-        android:backgroundTint="@color/blueButton"
         android:layout_below="@id/colorLayout"
-        android:layout_marginTop="16dp" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/blueButton"
+        android:text="View History"
+        android:textColor="#FFFFFF" />
+
 
 </RelativeLayout>

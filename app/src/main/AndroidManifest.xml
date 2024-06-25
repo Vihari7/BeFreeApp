@@ -2,13 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-sdk tools:overrideLibrary="com.google.firebase.auth" />
+
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.BODY_SENSORS" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-sdk tools:overrideLibrary="com.google.firebase.auth" />
 
     <application
         android:allowBackup="true"
@@ -20,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeFreeApp"
         tools:targetApi="31">
+        <activity
+            android:name=".NoteHistory"
+            android:exported="false" />
         <activity
             android:name=".EditProfile"
             android:exported="false" />
