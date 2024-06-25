@@ -1,104 +1,115 @@
 package com.viha.befreeapp;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.content.Intent;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-import com.google.firebase.auth.FirebaseAuth;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.DatabaseError;
 public class Login extends AppCompatActivity {
-    private FirebaseAuth mAuth;
-    private EditText typeEmail;
-    private EditText typePassword;
+
+    EditText loginUsername, loginPassword;
+    Button loginButton;
+    TextView signupRedirectText;
+    TextView forgetPwRedirectText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mAuth = FirebaseAuth.getInstance();
-
-        typeEmail = findViewById(R.id.typeEmail);
-        typePassword = findViewById(R.id.typePassword);
-        Button buttonLogin = findViewById(R.id.buttonSignup);
-        TextView linkToSignup = findViewById(R.id.linkToSignup);
-        TextView linkToForgetPW = findViewById(R.id.linktoForgetPW);
-
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
+        loginUsername = findViewById(R.id.login_username);
+        loginPassword = findViewById(R.id.login_password);
+        loginButton = findViewById(R.id.login_button);
+        signupRedirectText = findViewById(R.id.signupRedirectText);
+        forgetPwRedirectText = findViewById(R.id.forgetPwRedirectText);
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (validateInput()) {
-                    // Redirect to Dashboard
-                    Intent intent = new Intent(Login.this, Dashboard.class);
-                    startActivity(intent);
+            public void onClick(View view) {
+                if (!validateUsername() | !validatePassword()) {
+                } else {
+                    checkUser();
                 }
             }
         });
-
-        linkToSignup.setOnClickListener(new View.OnClickListener() {
+        signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Redirect to Signup
+            public void onClick(View view) {
                 Intent intent = new Intent(Login.this, Signup.class);
                 startActivity(intent);
             }
         });
-
-        linkToForgetPW.setOnClickListener(new View.OnClickListener() {
+        forgetPwRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Redirect to Forgot Password page
+            public void onClick(View view) {
                 Intent intent = new Intent(Login.this, ForgotPassword.class);
                 startActivity(intent);
             }
         });
     }
-    private boolean validateInput() {
-        String email = typeEmail.getText().toString().trim();
-        String password = typePassword.getText().toString().trim();
-
-        if (email.isEmpty()) {
-            typeEmail.setError("Email is required");
-            typeEmail.requestFocus();
+    public Boolean validateUsername() {
+        String val = loginUsername.getText().toString();
+        if (val.isEmpty()) {
+            loginUsername.setError("Username cannot be empty");
             return false;
+        } else {
+            loginUsername.setError(null);
+            return true;
         }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            typeEmail.setError("Please enter a valid email");
-            typeEmail.requestFocus();
-            return false;
-        }
-
-        if (password.isEmpty()) {
-            typePassword.setError("Password is required");
-            typePassword.requestFocus();
-            return false;
-        }
-
-        if (password.length() < 8) {
-            typePassword.setError("Password must be at least 8 characters");
-            typePassword.requestFocus();
-            return false;
-        }
-        return true;
     }
-    private void loginUser() {
-        String email = typeEmail.getText().toString().trim();
-        String password = typePassword.getText().toString().trim();
+    public Boolean validatePassword(){
+        String val = loginPassword.getText().toString();
+        if (val.isEmpty()) {
+            loginPassword.setError("Password cannot be empty");
+            return false;
+        } else {
+            loginPassword.setError(null);
+            return true;
+        }
+    }
+    public void checkUser(){
+        String userUsername = loginUsername.getText().toString().trim();
+        String userPassword = loginPassword.getText().toString().trim();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+        Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
+        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    loginUsername.setError(null);
+                    String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
+                    if (passwordFromDB.equals(userPassword)) {
+                        loginUsername.setError(null);
 
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Login.this, Dashboard.class));
+                        String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
+                        String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
+                        //pass data to intent
+                        Intent intent = new Intent(Login.this, Dashboard.class);
+
+                        intent.putExtra("username", usernameFromDB);
+                        intent.putExtra("email", emailFromDB);
+                        intent.putExtra("password", passwordFromDB);
+                        startActivity(intent);
                     } else {
-                        Toast.makeText(Login.this, "Login Failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        loginPassword.setError("Invalid Credentials");
+                        loginPassword.requestFocus();
                     }
-                });
+                } else {
+                    loginUsername.setError("User does not exist");
+                    loginUsername.requestFocus();
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
     }
 }

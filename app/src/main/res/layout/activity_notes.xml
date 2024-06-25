@@ -72,6 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/colorLayout"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@color/blueButton"
         android:text="Save Note" />
 
     <Button
@@ -81,6 +82,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:text="View History"
+        android:backgroundTint="@color/blueButton"
         android:layout_below="@id/colorLayout"
         android:layout_marginTop="16dp" />
 

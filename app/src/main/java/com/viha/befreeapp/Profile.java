@@ -1,106 +1,78 @@
 package com.viha.befreeapp;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
 public class Profile extends AppCompatActivity {
 
-    private ImageView profilePicture;
-    private TextView name;
-    private TextView email;
-
+    TextView profileUsername, profileEmail, profilePassword;
+    TextView titleUsername;
+    Button editProfile;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        profilePicture = findViewById(R.id.profile_picture);
-        name = findViewById(R.id.tvName);
-        email = findViewById(R.id.tvEmail);
+        profileUsername = findViewById(R.id.profileUsername);
+        profileEmail = findViewById(R.id.profileEmail);
+        profilePassword = findViewById(R.id.profilePassword);
+        titleUsername = findViewById(R.id.titleUsername);
+        editProfile = findViewById(R.id.editButton);
 
-        View.OnClickListener editProfileListener = view -> showEditProfileDialog();
-
-        profilePicture.setOnClickListener(editProfileListener);
-        name.setOnClickListener(editProfileListener);
-        email.setOnClickListener(editProfileListener);
-
-        TextView settings = findViewById(R.id.settings);
-        TextView tvShare = findViewById(R.id.tvShare);
-        TextView tvAboutUs = findViewById(R.id.tvAbout_us);
-        TextView tvFaqs = findViewById(R.id.tvFaqs);
-        TextView tvLogout = findViewById(R.id.tvLogout);
-
-        settings.setOnClickListener(view -> {
-            startActivity(new Intent(Profile.this, Settings.class));
-        });
-
-        tvShare.setOnClickListener(view -> {
-            shareProfile();
-        });
-
-        tvAboutUs.setOnClickListener(view -> {
-            startActivity(new Intent(Profile.this, AboutUs.class));
-        });
-
-        tvFaqs.setOnClickListener(view -> {
-            startActivity(new Intent(Profile.this, FAQs.class));
-        });
-
-        tvLogout.setOnClickListener(view -> {
-            performLogout();
+        showAllUserData();
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                passUserData();
+            }
         });
     }
+    public void showAllUserData(){
+        Intent intent = getIntent();
+        String usernameUser = intent.getStringExtra("username");
+        String emailUser = intent.getStringExtra("email");
+        String passwordUser = intent.getStringExtra("password");
 
-    private void showEditProfileDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Edit Profile");
-
-        View viewInflated = LayoutInflater.from(this).inflate(R.layout.dialog_edit_profile,
-                (ViewGroup) findViewById(android.R.id.content), false);
-        final ImageView editProfilePicture = viewInflated.findViewById(R.id.edit_profile_picture);
-        final EditText editName = viewInflated.findViewById(R.id.edit_name);
-        final EditText editEmail = viewInflated.findViewById(R.id.edit_email);
-        Button saveButton = viewInflated.findViewById(R.id.save_button);
-
-        editName.setText(name.getText().toString());
-        editEmail.setText(email.getText().toString());
-
-        builder.setView(viewInflated);
-
-        AlertDialog dialog = builder.create();
-
-        saveButton.setOnClickListener(v -> {
-            // Save the new values
-            name.setText(editName.getText().toString());
-            email.setText(editEmail.getText().toString());
-            // update here if needed
-            dialog.dismiss();
+        titleUsername.setText(usernameUser);
+        profileUsername.setText(usernameUser);
+        profileEmail.setText(emailUser);
+        profilePassword.setText(passwordUser);
+    }
+    public void passUserData(){
+        String userUsername = profileUsername.getText().toString().trim();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+        Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
+        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
+                    String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
+                    String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
+                    Intent intent = new Intent(Profile.this, EditProfile.class);
+                    intent.putExtra("username", usernameFromDB);
+                    intent.putExtra("email", emailFromDB);
+                    intent.putExtra("password", passwordFromDB);
+                    startActivity(intent);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
         });
-
-        dialog.show();
-    }
-
-    private void shareProfile() {
-        // Share functionality
-        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out this relaxing app: https://befree.com");
-        startActivity(Intent.createChooser(shareIntent, "Share via"));
-    }
-
-    private void performLogout() {
-        // Logout functionality
-        startActivity(new Intent(Profile.this, Login.class));
-        finish(); // Optional: Close the Profile activity
     }
 }

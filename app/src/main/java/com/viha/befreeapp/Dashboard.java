@@ -13,8 +13,7 @@ import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
 
 public class Dashboard extends AppCompatActivity {
     private View quotesCard;
@@ -30,13 +29,20 @@ public class Dashboard extends AppCompatActivity {
 
     static final int SPLASH_DISPLAY_LENGTH = 3000;
 
+    private String username, email, password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
         FirebaseApp.initializeApp(this);
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        // Get user data from intent
+        Intent intent = getIntent();
+        username = intent.getStringExtra("username");
+        email = intent.getStringExtra("email");
+        password = intent.getStringExtra("password");
+
         // Initialize card views of activities
         quotesCard = findViewById(R.id.activityButtons);
         mindActCard = findViewById(R.id.mindText);
@@ -134,7 +140,12 @@ public class Dashboard extends AppCompatActivity {
                         startActivity(new Intent(Dashboard.this, Notification.class));
                         return true;
                     case R.id.nav_profile:
-                        startActivity(new Intent(Dashboard.this, Profile.class));
+                        //pass data to profile
+                        Intent profileIntent = new Intent(Dashboard.this, Profile.class);
+                        profileIntent.putExtra("username", username);
+                        profileIntent.putExtra("email", email);
+                        profileIntent.putExtra("password", password);
+                        startActivity(profileIntent);
                         return true;
                     default:
                         return false;

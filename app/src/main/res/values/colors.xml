@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
     <!-- Blue Variations -->
     <color name="blueButton">#2F2D87</color>
     <color name="softBlueLightest">#E0F7FA</color>
@@ -41,4 +42,5 @@
     <color name="pastel_green">#77DD77</color>
     <color name="sage_green">#9DC183</color>
     <color name="moss_green">#8A9A5B</color>
+
 </resources>
