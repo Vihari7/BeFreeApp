@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Profile extends AppCompatActivity {
 
     TextView profileUsername, profileEmail, profilePassword;
-    TextView titleUsername;
+    TextView titleUsername, settingsButton, faqsButton, aboutUsButton, logoutButton;
     Button editProfile;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,6 +32,10 @@ public class Profile extends AppCompatActivity {
         profilePassword = findViewById(R.id.profilePassword);
         titleUsername = findViewById(R.id.titleUsername);
         editProfile = findViewById(R.id.editButton);
+        settingsButton = findViewById(R.id.redirectToSettings);
+        faqsButton = findViewById(R.id.redirectToFaqs);
+        aboutUsButton = findViewById(R.id.redicrectToAboutus);
+        logoutButton = findViewById(R.id.tvLogout);
 
         showAllUserData();
         editProfile.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +44,39 @@ public class Profile extends AppCompatActivity {
                 passUserData();
             }
         });
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Profile.this, Settings.class));
+            }
+        });
+
+        faqsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Profile.this, FAQs.class));
+            }
+        });
+
+        aboutUsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Profile.this, AboutUs.class));
+            }
+        });
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Redirecting to login screen
+                Intent intent = new Intent(Profile.this, Login.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
+
     public void showAllUserData(){
         Intent intent = getIntent();
         String usernameUser = intent.getStringExtra("username");
@@ -75,4 +111,5 @@ public class Profile extends AppCompatActivity {
             }
         });
     }
+
 }

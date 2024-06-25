@@ -188,19 +188,6 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvShare"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:drawableLeft="@drawable/icon_share_blue"
-            android:drawablePadding="8dp"
-            android:gravity="center"
-            android:text="Share"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-        <TextView
             android:id="@+id/redicrectToAboutus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -214,7 +201,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/RedirectToFaqs"
+            android:id="@+id/redirectToFaqs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -230,7 +217,7 @@
             android:id="@+id/tvLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="40dp"
             android:drawableLeft="@drawable/icon_logout"
             android:drawablePadding="8dp"
             android:gravity="center"

@@ -11,7 +11,6 @@
     tools:context=".VerifyOTP">
 
     <TextView
-        android:id="@+id/verifyOtpText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -22,14 +21,13 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/verifyImage"
         android:layout_width="wrap_content"
         android:layout_height="277dp"
         android:layout_gravity="center"
         android:src="@drawable/verify" />
 
     <EditText
-        android:id="@+id/textOfCode"
+        android:id="@+id/inputOTP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"

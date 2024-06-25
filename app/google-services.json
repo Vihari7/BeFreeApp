@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "356673692636",
+    "project_id": "befreeapp-785aa",
+    "storage_bucket": "befreeapp-785aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356673692636:android:5382803e1569428da12519",
+        "android_client_info": {
+          "package_name": "com.viha.befreeapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3LbAyydBArzEjXKwTvUZpIrMsgjz6nso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

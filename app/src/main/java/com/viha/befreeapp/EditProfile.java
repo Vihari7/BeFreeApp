@@ -34,7 +34,6 @@ public class EditProfile extends AppCompatActivity {
             public void onClick(View view) {
                 if (isNameChanged() || isPasswordChanged() || isEmailChanged()){
                     Toast.makeText(EditProfile.this, "Saved", Toast.LENGTH_SHORT).show();
-                    refreshUI();
                 } else {
                     Toast.makeText(EditProfile.this, "No Changes Found", Toast.LENGTH_SHORT).show();
                 }
@@ -73,11 +72,6 @@ public class EditProfile extends AppCompatActivity {
         usernameUser = intent.getStringExtra("username");
         emailUser = intent.getStringExtra("email");
         passwordUser = intent.getStringExtra("password");
-        editUsername.setText(usernameUser);
-        editEmail.setText(emailUser);
-        editPassword.setText(passwordUser);
-    }
-    private void refreshUI() {
         editUsername.setText(usernameUser);
         editEmail.setText(emailUser);
         editPassword.setText(passwordUser);
