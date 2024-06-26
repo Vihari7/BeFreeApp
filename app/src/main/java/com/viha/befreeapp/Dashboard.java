@@ -137,7 +137,7 @@ public class Dashboard extends AppCompatActivity {
                         startActivity(new Intent(Dashboard.this, Notes.class));
                         return true;
                     case R.id.nav_notification:
-                        startActivity(new Intent(Dashboard.this, Notification.class));
+                        startActivity(new Intent(Dashboard.this, Notifications.class));
                         return true;
                     case R.id.nav_profile:
                         //pass data to profile
