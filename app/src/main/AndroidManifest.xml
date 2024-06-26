@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 
     <application
         android:allowBackup="true"
@@ -102,6 +103,8 @@
         <activity
             android:name=".MindfulActivities"
             android:exported="false" />
+        <receiver android:name=".NotificationPublisher" />
+
         <activity
             android:name=".Quotes"
             android:exported="false" />

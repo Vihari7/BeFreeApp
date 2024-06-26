@@ -9,16 +9,16 @@
 
     <TextView
         android:id="@+id/kindness_medi_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="416dp"
+        android:layout_height="37dp"
         android:layout_above="@+id/videoView"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="-5dp"
-        android:layout_marginBottom="126dp"
+        android:layout_marginBottom="118dp"
         android:gravity="center"
         android:text="Loving-Kindness Meditation"
         android:textColor="@color/lavenderDark"
@@ -56,7 +56,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/blueButton"
-        android:text="Play" />
+        android:text="Play"
+        android:textColor="#FFFFFF" />
 
     <SeekBar
         android:id="@+id/seekBar"
