@@ -46,7 +46,7 @@ public class CrisisSupport extends AppCompatActivity {
 
     private void openChatSupport() {
         // Open chat support activity or web page
-        Intent chatIntent = new Intent(this, Messages.class);
+        Intent chatIntent = new Intent(this, Chat.class);
         startActivity(chatIntent);
     }
     private void openWebsite(String url) {

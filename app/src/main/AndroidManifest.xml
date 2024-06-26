@@ -67,7 +67,7 @@
             android:name=".Notes"
             android:exported="false" />
         <activity
-            android:name=".Messages"
+            android:name=".Chat"
             android:exported="false" />
         <activity
             android:name=".Meditation"
