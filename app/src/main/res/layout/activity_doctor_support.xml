@@ -122,56 +122,8 @@
 
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
-
             <LinearLayout
                 android:id="@+id/row3"
-                android:layout_width="347dp"
-                android:layout_height="75dp"
-                android:orientation="horizontal"
-                android:padding="2dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="244dp"
-                app:layout_constraintTop_toBottomOf="@+id/row2">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Appointments"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="20dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/tea_green">
-
-                        <TextView
-                            android:id="@+id/Appointment_text"
-                            android:layout_width="308dp"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginStart="3dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="11dp"
-                            android:layout_marginBottom="12dp"
-                            android:gravity="center"
-                            android:text="Appointment Scheduling"
-                            android:textColor="@color/celadon_green"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/row4"
                 android:layout_width="347dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="18dp"
@@ -180,7 +132,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/row3">
+                app:layout_constraintTop_toBottomOf="@+id/row2">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/Crisis_Support"
@@ -217,7 +169,7 @@
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/row5"
+                android:id="@+id/row4"
                 android:layout_width="347dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="18dp"
@@ -226,10 +178,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/row4">
+                app:layout_constraintTop_toBottomOf="@+id/row3">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Nearby_Doc_card"
+                    android:id="@+id/Nearby_Doc"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"

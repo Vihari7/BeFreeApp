@@ -8,7 +8,7 @@ import android.content.Intent;
 import androidx.cardview.widget.CardView;
 
 public class DoctorSupport extends AppCompatActivity {
-    private CardView nearbyMedicalFacilitiesCard, symptomCheckerCard, appointmentsCard, crisisSupportCard;
+    private CardView nearbyMedicalFacilitiesCard, symptomCheckerCard, nearbyDoctorsCard, crisisSupportCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class DoctorSupport extends AppCompatActivity {
         // Initialize the CardView elements
         nearbyMedicalFacilitiesCard = findViewById(R.id.Nearby_Medical_Faci);
         symptomCheckerCard = findViewById(R.id.Symptom_Checker);
-        appointmentsCard = findViewById(R.id.Appointments);
+        nearbyDoctorsCard = findViewById(R.id.Nearby_Doc);
         crisisSupportCard = findViewById(R.id.Crisis_Support);
 
         // Set click listeners for each CardView
@@ -35,10 +35,10 @@ public class DoctorSupport extends AppCompatActivity {
             }
         });
 
-        appointmentsCard.setOnClickListener(new View.OnClickListener() {
+        nearbyDoctorsCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openAppointments();
+                openNearByDoctors();
             }
         });
 
@@ -60,13 +60,13 @@ public class DoctorSupport extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openAppointments() {
-        Intent intent = new Intent(this, DoctorAppointments.class);
+    public void openCrisisSupport() {
+        Intent intent = new Intent(this, CrisisSupport.class);
         startActivity(intent);
     }
 
-    public void openCrisisSupport() {
-        Intent intent = new Intent(this, CrisisSupport.class);
+    public void openNearByDoctors() {
+        Intent intent = new Intent(this, NearByDoctors.class);
         startActivity(intent);
     }
 }

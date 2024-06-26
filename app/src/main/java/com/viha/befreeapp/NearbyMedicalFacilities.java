@@ -39,7 +39,7 @@ public class NearbyMedicalFacilities extends AppCompatActivity {
 
     private void getPath(String startingPoint, String endPoint) {
         try{
-            Uri uri = Uri.parse("https://www.google.com/maps/@6.804745,79.9304626,15z?entry=ttu"+ startingPoint + "/" + endPoint);
+            Uri uri = Uri.parse("https://maps.google.com/"+ startingPoint + "/" + endPoint);
             Intent intent = new Intent(Intent.ACTION_VIEW,uri);
             intent.setPackage("com.google.android.apps.maps");
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
