@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".CrisisSupport">
 
     <TextView
@@ -13,33 +14,35 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:text="Crisis Support"
+        android:textColor="@color/blueDarkest"
         android:textSize="25sp"
-        android:textColor="@color/softBlueDark"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnCallHelpline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Call Helpline"
         android:layout_below="@id/tvCrisisSupportTitle"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="@color/blueButton"
         android:padding="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        android:text="Call Helpline"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/btnChatSupport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Chat Support"
         android:layout_below="@id/btnCallHelpline"
-        android:backgroundTint="@color/blueButton"
-        android:layout_marginTop="16dp"
-        android:padding="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/blueButton"
+        android:padding="16dp"
+        android:text="Chat Support"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/tvHotlineNumbers"
@@ -50,6 +53,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:text="Hotline Numbers: National Institute of Mental Health,\nSri Lanka.\n  National Mental Health Helpline: 1926 \n  Dementia Hotline: +94113140844"
+        android:textColor="#000000"
         android:textSize="15dp"
         android:textStyle="bold|italic" />
 
@@ -61,8 +65,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="19dp"
         android:layout_marginBottom="5dp"
-        android:textColor="@color/softBlue"
         android:text="Visite National Institute of Mental Health, Sri Lanka"
+        android:textColor="@color/blueDarkest"
         android:textSize="15dp" />
 
     <Button
@@ -71,11 +75,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/websiteText"
         android:layout_alignParentStart="true"
-        android:backgroundTint="@color/blueButton"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/blueButton"
         android:padding="16dp"
-        android:text="Visit Website" />
+        android:text="Visit Website"
+        android:textColor="#FFFFFF" />
 
 
 </RelativeLayout>
