@@ -29,6 +29,6 @@ public class NearByDoctors extends AppCompatActivity implements OnMapReadyCallba
 
         LatLng doctorLocation = new LatLng(6.821830492277035, 79.88054819085279);
         mMap.addMarker(new MarkerOptions().position(doctorLocation).title("Dr. M. B. S. Niranjala Fernando"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(doctorLocation, 12)); // Zoom level 1-20
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(doctorLocation, 12)); // Zoom level
     }
 }

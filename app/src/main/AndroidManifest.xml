@@ -50,16 +50,13 @@
             android:name=".CrisisSupport"
             android:exported="false" />
         <activity
-            android:name=".DoctorAppointments"
-            android:exported="false" />
-        <activity
             android:name=".SymptomChecker"
             android:exported="false" />
         <activity
             android:name=".KindnessMeditation"
             android:exported="false" />
         <activity
-            android:name=".NearbyMedicalFacilities"
+            android:name=".NearbyMedicalFacility"
             android:exported="false" />
         <activity
             android:name=".BreathInstruction_MindAct"

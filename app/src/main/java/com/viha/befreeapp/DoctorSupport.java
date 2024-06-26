@@ -51,7 +51,7 @@ public class DoctorSupport extends AppCompatActivity {
     }
 
     public void openNearbyMedicalFacilities() {
-        Intent intent = new Intent(this, NearbyMedicalFacilities.class);
+        Intent intent = new Intent(this, NearbyMedicalFacility.class);
         startActivity(intent);
     }
 

@@ -10,36 +10,36 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class NearbyMedicalFacilities extends AppCompatActivity {
-
+public class NearbyMedicalFacility extends AppCompatActivity {
     private EditText editTextStart;
     private EditText editTextEnd;
     private Button btnGetPath;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nearby_medical_facilities);
+        setContentView(R.layout.activity_nearby_medical_facility);
+        editTextStart = findViewById(R.id.editTextStart);
+        editTextEnd = findViewById(R.id.editTextEnd);
+        btnGetPath = findViewById(R.id.btnGetPath);
 
-       editTextStart = findViewById(R.id.editTextStart);
-       editTextEnd = findViewById(R.id.editTextEnd);
-       btnGetPath = findViewById(R.id.btnGetPath);
 
-       btnGetPath.setOnClickListener(v ->{
-           String startingPoint = editTextStart.getText().toString();
-           String endPoint =editTextEnd.getText().toString();
+        btnGetPath.setOnClickListener(v ->{
+            String startingPoint = editTextStart.getText().toString();
+            String endPoint =editTextEnd.getText().toString();
 
-           if(startingPoint.equals("")|| endPoint.equals("")){
-               Toast.makeText(this,"Please enter starting location $ detination",
-                       Toast.LENGTH_SHORT).show();
-           }else{
-               getPath(startingPoint,endPoint);
-           }
-       });
+            if(startingPoint.equals("")|| endPoint.equals("")){
+                Toast.makeText(this,"Please enter starting location $ detination",
+                        Toast.LENGTH_SHORT).show();
+            }else{
+                getPath(startingPoint,endPoint);
+            }
+        });
     }
 
     private void getPath(String startingPoint, String endPoint) {
         try{
-            Uri uri = Uri.parse("https://maps.google.com/"+ startingPoint + "/" + endPoint);
+            Uri uri = Uri.parse("https://www.google.com/maps/dir/" + startingPoint + "&destination=" + endPoint);
             Intent intent = new Intent(Intent.ACTION_VIEW,uri);
             intent.setPackage("com.google.android.apps.maps");
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
