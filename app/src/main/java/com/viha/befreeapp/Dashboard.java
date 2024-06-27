@@ -27,7 +27,7 @@ public class Dashboard extends AppCompatActivity {
     private ImageButton buttonTired;
     private ImageButton buttonAngry;
 
-    static final int SPLASH_DISPLAY_LENGTH = 3000;
+    static final int SPLASH_DISPLAY_LENGTH = 5000;//5 seconds
 
     private String username, email, password;
 
@@ -131,7 +131,7 @@ public class Dashboard extends AppCompatActivity {
                         // Already on the Dashboard
                         return true;
                     case R.id.nav_message:
-                        startActivity(new Intent(Dashboard.this, Chat.class));
+                        startActivity(new Intent(Dashboard.this, Message.class));
                         return true;
                     case R.id.nav_notes:
                         startActivity(new Intent(Dashboard.this, Notes.class));

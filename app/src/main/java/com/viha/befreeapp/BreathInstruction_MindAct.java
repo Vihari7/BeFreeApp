@@ -13,7 +13,7 @@ public class BreathInstruction_MindAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breath_instruction_mind);
 
-        //navigate to breathing.java
+        //navigate to breathing activity
         Button navToBreathButton = findViewById(R.id.navToBreathButton);
         navToBreathButton.setOnClickListener(new View.OnClickListener() {
             @Override

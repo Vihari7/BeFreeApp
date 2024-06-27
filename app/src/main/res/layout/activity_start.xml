@@ -10,7 +10,7 @@
     <!-- Be Free Title-->
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/tvTitle"
         android:layout_width="261dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -32,10 +32,10 @@
         app:layout_constraintVertical_bias="0.098" />
 
     <TextView
-        android:id="@+id/sub_title"
+        android:id="@+id/tvSub_title"
         android:layout_width="299dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
+        android:layout_below="@id/tvTitle"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="57dp"
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toStartOf="@+id/background_img"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toEndOf="@+id/background_img"
-        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         app:layout_constraintVertical_bias="0.018" />
 
     <ImageView
@@ -68,7 +68,7 @@
         android:id="@+id/start_button"
         android:layout_width="204dp"
         android:layout_height="60dp"
-        android:layout_below="@+id/sub_title"
+        android:layout_below="@+id/tvSub_title"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="96dp"

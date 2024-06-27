@@ -15,8 +15,8 @@ public class MindfulWalking extends AppCompatActivity implements SensorEventList
 
     private SensorManager sensorManager;
     private Sensor accelerometer;
-    private static final float THRESHOLD = 1.0f; // Adjusted threshold for more sensitivity
-    private static final long DEBOUNCE_TIME = 1500; // 1 second debounce time to slow down step detection
+    private static final float THRESHOLD = 1.5f; // Adjusted threshold for more sensitivity
+    private static final long DEBOUNCE_TIME = 2000; // 1 second debounce time to slow down step detection
     private long lastStepTime = 0;
     private int stepCount = 0;
     private MediaPlayer mediaPlayer;

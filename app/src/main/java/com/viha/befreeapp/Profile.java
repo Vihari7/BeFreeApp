@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Profile extends AppCompatActivity {
 
     TextView profileUsername, profileEmail, profilePassword;
-    TextView titleUsername, settingsButton, faqsButton, aboutUsButton, logoutButton;
+    TextView titleUsername, faqsButton, aboutUsButton, logoutButton;
     Button editProfile;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,7 +32,6 @@ public class Profile extends AppCompatActivity {
         profilePassword = findViewById(R.id.profilePassword);
         titleUsername = findViewById(R.id.titleUsername);
         editProfile = findViewById(R.id.editButton);
-        settingsButton = findViewById(R.id.redirectToSettings);
         faqsButton = findViewById(R.id.redirectToFaqs);
         aboutUsButton = findViewById(R.id.redicrectToAboutus);
         logoutButton = findViewById(R.id.tvLogout);
@@ -42,12 +41,6 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 passUserData();
-            }
-        });
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Profile.this, Settings.class));
             }
         });
 

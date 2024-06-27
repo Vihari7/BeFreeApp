@@ -45,9 +45,16 @@ public class CrisisSupport extends AppCompatActivity {
     }
 
     private void openChatSupport() {
-        // Open chat support activity or web page
-        Intent chatIntent = new Intent(this, Chat.class);
-        startActivity(chatIntent);
+        // Open WhatsApp chat with a predefined phone number
+        String phoneNumber = "+94771793257";
+        String url = "https://api.whatsapp.com/send?phone=" + phoneNumber;
+        try {
+            Intent chatIntent = new Intent(Intent.ACTION_VIEW);
+            chatIntent.setData(Uri.parse(url));
+            startActivity(chatIntent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     private void openWebsite(String url) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));

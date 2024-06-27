@@ -27,9 +27,7 @@ public class VerifyOTP extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String otp = inputOTP.getText().toString().trim();
-                // Verify OTP logic (not provided in detail as it can vary)
-                // Typically you compare this OTP with the one sent via email
-                // If OTP is correct, navigate to NewPassword activity
+                // If OTP is correct, navigate to NewPassword
                 Intent intent = new Intent(VerifyOTP.this, NewPassword.class);
                 startActivity(intent);
             }

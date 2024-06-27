@@ -18,6 +18,7 @@ public class Breathing extends AppCompatActivity {
     private boolean isExpanding = true;
     private TextView breathingInstructions;
     private int breathCycleCount = 0;
+    static final int SPLASH_DISPLAY_LENGTH = 6000;//6 seconds
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class Breathing extends AppCompatActivity {
 
         circleView = findViewById(R.id.circleView);
         breathingInstructions = findViewById(R.id.breathingInstructions);
-        startBreathingAnimation();
+        startBreathingAnimation();// Start the breathing animation
     }
 
     private void startBreathingAnimation() {
@@ -36,7 +37,8 @@ public class Breathing extends AppCompatActivity {
 
         handler.post(new Runnable() {
             public void run() {
-                if (breathCycleCount < 3) {
+                // Perform breathing animation cycles
+                if (breathCycleCount <= 3) {
                 if (isExpanding) {
                     breathingInstructions.setText("Inhale");
                     animateCircle(1.0f, 1.5f, inhaleDuration);
@@ -49,9 +51,10 @@ public class Breathing extends AppCompatActivity {
                     animateCircle(1.5f, 1.0f, exhaleDuration);
                     handler.postDelayed(this, exhaleDuration);
                 }
+                    // Toggle breathing phase
                     isExpanding = !isExpanding;
                     if (!isExpanding) {
-                        breathCycleCount++;
+                        breathCycleCount++;  // Increment breath cycle count
                     }
                 }
                 else {
@@ -84,6 +87,7 @@ public class Breathing extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        // Clean up handler to prevent memory leaks
         handler.removeCallbacksAndMessages(null);
     }
 }

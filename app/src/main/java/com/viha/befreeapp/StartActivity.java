@@ -20,6 +20,7 @@ public class StartActivity extends AppCompatActivity {
         linkToLogin = findViewById(R.id.linkToLogin);
 
         startButton.setOnClickListener(new View.OnClickListener() {
+            //Redirect to signup
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(StartActivity.this, Signup.class);
@@ -27,7 +28,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-
+        //Redirect to login
         linkToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

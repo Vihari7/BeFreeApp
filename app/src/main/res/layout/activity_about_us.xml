@@ -28,7 +28,7 @@
         android:layout_marginTop="20dp"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:text="Welcome to Be Free, your mental health companion.Developed by a software engineering student \n at open university Sri Lanka \n\n Be Free offers mindfulness activities, inspirational quotes, relaxing music, a personal diary, community support, and access to professional help all in one app.\n\n Our mission is to help you relax your mind and manage everyday stress effectively.\n\nThank You!"
+        android:text="Welcome to Be Free,\n your mental health companion.\nDeveloped by a software engineering student at open university Sri Lanka \n\n Be Free offers mindfulness activities, inspirational quotes, relaxing music, a personal diary, community support, and access to professional help all in one app.\n\n Our mission is to help you relax your mind and manage everyday stress effectively.\n\nThank You!"
         android:textColor="@color/black"
         android:textSize="20sp" />
 

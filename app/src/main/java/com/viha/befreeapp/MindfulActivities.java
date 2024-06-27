@@ -78,7 +78,9 @@ public class MindfulActivities extends AppCompatActivity {
 
     private void scheduleNotification(Class<?> cls) {
         long delay = 10 * 1000; // 10 seconds delay (for testing)
+        // Get the AlarmManager service to schedule the notification
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        // Create an intent to trigger the NotificationPublisher BroadcastReceiver
         Intent intent = new Intent(this, NotificationPublisher.class);
         intent.putExtra(NotificationPublisher.NOTIFICATION_ID, 1);
         intent.putExtra(NotificationPublisher.NOTIFICATION, createNotification(cls));
@@ -86,26 +88,27 @@ public class MindfulActivities extends AppCompatActivity {
         alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + delay, pendingIntent);
     }
 
+    //create and return a notification
     private Notification createNotification(Class<?> cls) {
         Intent intent = new Intent(this, cls);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
-        String channelId = "default_channel_id"; // Change this to your desired channel ID
+        String channelId = "default_channel_id";
         Notification.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            // Create Notification Channel for Android Oreo and higher
+            // Create Notification Channel
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             NotificationChannel channel = new NotificationChannel(channelId, "Default Channel", NotificationManager.IMPORTANCE_DEFAULT);
             notificationManager.createNotificationChannel(channel);
 
             builder = new Notification.Builder(this, channelId);
         } else {
-            // For older versions, use Notification.Builder without specifying a channel
+
             builder = new Notification.Builder(this);
         }
-
+        // Build the notification
         builder
                 .setSmallIcon(R.drawable.icon_notification)
                 .setContentTitle("Mindful Activity Reminder")

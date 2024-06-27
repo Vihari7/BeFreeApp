@@ -9,6 +9,7 @@ import android.view.View;
 import androidx.cardview.widget.CardView;
 
 public class Quotes extends AppCompatActivity {
+    // Declare CardView variables for different categories
     private CardView  lifeCard, loveCard, motiveCard, healthCard, eduCard, selfCard;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -23,10 +24,11 @@ public class Quotes extends AppCompatActivity {
         eduCard = findViewById(R.id.eduCard);
         selfCard = findViewById(R.id.selfCard);
 
+        // Set onClickListeners for each CardView to open the Gallery
         lifeCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openGallery("Life");
+                openGallery("Life");// Open gallery with "Life" category
             }
         });
 
@@ -65,10 +67,10 @@ public class Quotes extends AppCompatActivity {
             }
         });
     }
-
+   // Method to open Gallery with a specific category
     private void openGallery(String category) {
         Intent intent = new Intent(this, Gallery.class);
-        intent.putExtra("CATEGORY", category);
-        startActivity(intent);
+        intent.putExtra("CATEGORY", category);// Pass the category as an intent extra
+        startActivity(intent);// Start the Gallery
     }
 }

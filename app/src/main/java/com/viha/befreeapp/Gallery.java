@@ -32,7 +32,7 @@ public class Gallery extends AppCompatActivity {
 
     private ArrayList<Integer> getImagesForCategory(String category) {
         ArrayList<Integer> images = new ArrayList<>();
-
+       // add quote images
         if (category.equals("Life")) {
             images.add(R.drawable.life_img1);
             images.add(R.drawable.life_img2);

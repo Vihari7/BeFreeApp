@@ -32,15 +32,24 @@ public class Signup extends AppCompatActivity {
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                // Initialize Firebase database and reference
                 database = FirebaseDatabase.getInstance();
                 reference = database.getReference("users");
+                // Get user input from EditText fields
                 String username = signupUsername.getText().toString();
                 String email = signupEmail.getText().toString();
                 String password = signupPassword.getText().toString();
 
+                // Check if password length at least 6
+                if (password.length() < 6) {
+                    Toast.makeText(Signup.this, "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                // Create a HelperClass instance with user data
                 HelperClass helperClass = new HelperClass(username, email, password);
+                // Store user data in Firebase database under the username
                 reference.child(username).setValue(helperClass);
-
+                // Show signup success message
                 Toast.makeText(Signup.this, "You have signup successfully!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Signup.this, Login.class);
                 startActivity(intent);
@@ -49,6 +58,7 @@ public class Signup extends AppCompatActivity {
         loginRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Redirect to Login activity after successful signup
                 Intent intent = new Intent(Signup.this, Login.class);
                 startActivity(intent);
             }
