@@ -29,7 +29,7 @@ public class NearbyMedicalFacility extends AppCompatActivity {
             String endPoint =editTextEnd.getText().toString();
 
             if(startingPoint.equals("")|| endPoint.equals("")){
-                Toast.makeText(this,"Please enter starting location $ detination",
+                Toast.makeText(this,"Please enter starting location $ destination",
                         Toast.LENGTH_SHORT).show();
             }else{
                 getPath(startingPoint,endPoint);
