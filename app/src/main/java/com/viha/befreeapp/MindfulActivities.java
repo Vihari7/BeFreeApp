@@ -67,7 +67,7 @@ public class MindfulActivities extends AppCompatActivity {
 
     private void setupClickListeners(CardView cardView, Class<?> cls) {
         cardView.setOnClickListener(view -> {
-            // Start activity when card is clicked (optional)
+            // Start activity when card is clicked
             Intent intent = new Intent(MindfulActivities.this, cls);
             startActivity(intent);
 
