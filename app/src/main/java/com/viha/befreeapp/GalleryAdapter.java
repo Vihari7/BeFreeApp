@@ -46,7 +46,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
     @Override
     public int getItemCount()
     {
-        return imageList.size();// Return the size of your dataset
+        return imageList.size();// Return the size of dataset
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
