@@ -2,13 +2,16 @@ package com.viha.befreeapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -38,25 +41,20 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 // Check if username and password are valid
                 if (!validateUsername() | !validatePassword()) {
+                    Toast.makeText(Login.this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
+                } else if (!isConnected()) {
+                    Toast.makeText(Login.this, "No internet connection. Please check your connection and try again.", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Validation passed, check user in the database
                     checkUser();
                 }
             }
         });
+
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Redirect to Signup
                 Intent intent = new Intent(Login.this, Signup.class);
-                startActivity(intent);
-            }
-        });
-        forgetPwRedirectText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Redirect to ForgotPassword
-                Intent intent = new Intent(Login.this, ForgotPassword.class);
                 startActivity(intent);
             }
         });
@@ -127,8 +125,14 @@ public class Login extends AppCompatActivity {
             // Error handling if any error occur
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                // Handle database error
+                Toast.makeText(Login.this, "Database Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private boolean isConnected() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        return networkInfo != null && networkInfo.isConnected();
     }
 }

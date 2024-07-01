@@ -54,15 +54,6 @@
         android:textColor="@color/blueButton"
         android:textColorHint="#808080"/>
 
-    <TextView
-        android:id="@+id/forgetPwRedirectText"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_gravity="left"
-        android:layout_marginTop="10dp"
-        android:text="Forget Password?"
-        android:textColor="@color/blueDarkest" />
-
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"
