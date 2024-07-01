@@ -10,14 +10,13 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MindfulWalking extends AppCompatActivity implements SensorEventListener {
 
     private SensorManager sensorManager;
-    private Sensor accelerometer;
-    private static final float THRESHOLD = 1.5f; // Adjusted threshold for more sensitivity
-    private static final long DEBOUNCE_TIME = 2000; // 1 second debounce time to slow down step detection
-    private long lastStepTime = 0;
+    private Sensor stepCounterSensor;
+    private Sensor stepDetectorSensor;
     private int stepCount = 0;
     private MediaPlayer mediaPlayer;
     @Override
@@ -26,10 +25,20 @@ public class MindfulWalking extends AppCompatActivity implements SensorEventList
         setContentView(R.layout.activity_mindful_walking);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        stepCounterSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+        stepDetectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
 
-        sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+        if (stepCounterSensor != null) {
+            sensorManager.registerListener(this, stepCounterSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        } else {
+            Toast.makeText(this, "Step Counter Sensor is not available!", Toast.LENGTH_LONG).show();
+        }
 
+        if (stepDetectorSensor != null) {
+            sensorManager.registerListener(this, stepDetectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        } else {
+            Toast.makeText(this, "Step Detector Sensor is not available!", Toast.LENGTH_LONG).show();
+        }
 
         // Initialize and start media player
         mediaPlayer = MediaPlayer.create(this, R.raw.quite_time);
@@ -39,19 +48,13 @@ public class MindfulWalking extends AppCompatActivity implements SensorEventList
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            float x = event.values[0];
-            float y = event.values[1];
-            float z = event.values[2];
-
-            double magnitude = Math.sqrt(x * x + y * y + z * z);
-
-            if (magnitude > THRESHOLD) {
-                long currentTime = System.currentTimeMillis();
-                if (currentTime - lastStepTime > DEBOUNCE_TIME)  { // Debounce the step detection
-                    lastStepTime = currentTime;
-                    onStepDetected();
-                }
+        if (event.sensor.getType() == Sensor.TYPE_STEP_COUNTER) {
+            stepCount = (int) event.values[0];
+            updateStepCount();
+        } else if (event.sensor.getType() == Sensor.TYPE_STEP_DETECTOR) {
+            if (event.values[0] == 1.0f) {
+                stepCount++;
+                updateStepCount();
             }
         }
     }
@@ -72,7 +75,12 @@ public class MindfulWalking extends AppCompatActivity implements SensorEventList
     @Override
     protected void onResume() {
         super.onResume();
-        sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+        if (stepCounterSensor != null) {
+            sensorManager.registerListener(this, stepCounterSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        }
+        if (stepDetectorSensor != null) {
+            sensorManager.registerListener(this, stepDetectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        }
         if (mediaPlayer != null) {
             mediaPlayer.start();
         }
@@ -87,11 +95,8 @@ public class MindfulWalking extends AppCompatActivity implements SensorEventList
         }
     }
 
-    private void onStepDetected() {
-        stepCount++;
+    private void updateStepCount() {
         TextView stepCountView = findViewById(R.id.stepCount);
         stepCountView.setText("Steps: " + stepCount);
     }
-
-
 }

@@ -31,6 +31,7 @@
         <activity
             android:name=".Notifications"
             android:exported="false" />
+        <receiver android:name=".NotificationPublisher" />
         <activity
             android:name=".NoteHistory"
             android:exported="false" />
@@ -101,7 +102,7 @@
             android:name=".MindfulActivities"
             android:exported="false" />
 
-        <receiver android:name=".NotificationPublisher" />
+
 
         <activity
             android:name=".Quotes"
