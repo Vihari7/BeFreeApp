@@ -107,15 +107,6 @@
             android:name=".Quotes"
             android:exported="false" />
         <activity
-            android:name=".NewPassword"
-            android:exported="false" />
-        <activity
-            android:name=".VerifyOTP"
-            android:exported="false" />
-        <activity
-            android:name=".ForgotPassword"
-            android:exported="false" />
-        <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity

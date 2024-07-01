@@ -33,7 +33,6 @@ public class Login extends AppCompatActivity {
         loginPassword = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
         signupRedirectText = findViewById(R.id.signupRedirectText);
-        forgetPwRedirectText = findViewById(R.id.forgetPwRedirectText);
 
         // Set click listener for login button
         loginButton.setOnClickListener(new View.OnClickListener() {
