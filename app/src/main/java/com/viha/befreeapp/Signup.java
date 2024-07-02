@@ -40,6 +40,12 @@ public class Signup extends AppCompatActivity {
                 String email = signupEmail.getText().toString();
                 String password = signupPassword.getText().toString();
 
+                // Validate email format
+                if (!isValidEmail(email)) {
+                    Toast.makeText(Signup.this, "Invalid email format", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // Check if password length at least 6
                 if (password.length() < 6) {
                     Toast.makeText(Signup.this, "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
@@ -63,5 +69,9 @@ public class Signup extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    // Method to validate email format
+    private boolean isValidEmail(String email) {
+        return email.contains("@") && email.endsWith(".com");
     }
 }

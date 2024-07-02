@@ -32,8 +32,14 @@ public class EditProfile extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isNameChanged() || isPasswordChanged() || isEmailChanged()){
+                if (isNameChanged() || isPasswordChanged() || isEmailChanged()) {
                     Toast.makeText(EditProfile.this, "Saved", Toast.LENGTH_SHORT).show();
+                    Intent resultIntent = new Intent();
+                    resultIntent.putExtra("username", usernameUser);
+                    resultIntent.putExtra("email", emailUser);
+                    resultIntent.putExtra("password", passwordUser);
+                    setResult(RESULT_OK, resultIntent);
+                    finish(); // Close the activity
                 } else {
                     Toast.makeText(EditProfile.this, "No Changes Found", Toast.LENGTH_SHORT).show();
                 }
@@ -41,16 +47,17 @@ public class EditProfile extends AppCompatActivity {
         });
     }
     private boolean isNameChanged() {
-        if (!usernameUser.equals(editUsername.getText().toString())){
+        if (!usernameUser.equals(editUsername.getText().toString())) {
             reference.child(usernameUser).child("username").setValue(editUsername.getText().toString());
-            usernameUser= editUsername.getText().toString();
+            usernameUser = editUsername.getText().toString();
             return true;
         } else {
             return false;
         }
     }
+
     private boolean isEmailChanged() {
-        if (!emailUser.equals(editEmail.getText().toString())){
+        if (!emailUser.equals(editEmail.getText().toString())) {
             reference.child(usernameUser).child("email").setValue(editEmail.getText().toString());
             emailUser = editEmail.getText().toString();
             return true;
@@ -58,8 +65,9 @@ public class EditProfile extends AppCompatActivity {
             return false;
         }
     }
+
     private boolean isPasswordChanged() {
-        if (!passwordUser.equals(editPassword.getText().toString())){
+        if (!passwordUser.equals(editPassword.getText().toString())) {
             reference.child(usernameUser).child("password").setValue(editPassword.getText().toString());
             passwordUser = editPassword.getText().toString();
             return true;
@@ -67,6 +75,7 @@ public class EditProfile extends AppCompatActivity {
             return false;
         }
     }
+
     public void showData(){
         Intent intent = getIntent();
         usernameUser = intent.getStringExtra("username");

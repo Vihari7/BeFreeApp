@@ -1,7 +1,16 @@
 package com.viha.befreeapp;
 
 public class HelperClass {
-    String username ,email, password;
+    String username, email, password;
+
+    public HelperClass() {
+    }
+
+    public HelperClass(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
     public String getUsername() {
         return username;
@@ -25,16 +34,5 @@ public class HelperClass {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public HelperClass(String username, String email, String password) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
-
-
-
-    public HelperClass() {
     }
 }

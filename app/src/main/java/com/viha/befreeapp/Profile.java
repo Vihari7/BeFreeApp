@@ -72,23 +72,24 @@ public class Profile extends AppCompatActivity {
 
     public void showAllUserData(){
         Intent intent = getIntent();
-        String usernameUser = intent.getStringExtra("username");
-        String emailUser = intent.getStringExtra("email");
-        String passwordUser = intent.getStringExtra("password");
+        String updatedUsername = intent.getStringExtra("username");
+        String updatedEmail = intent.getStringExtra("email");
+        String updatedPassword = intent.getStringExtra("password");
 
-        titleUsername.setText(usernameUser);
-        profileUsername.setText(usernameUser);
-        profileEmail.setText(emailUser);
-        profilePassword.setText(passwordUser);
+
+        titleUsername.setText(updatedUsername);
+        profileUsername.setText(updatedUsername);
+        profileEmail.setText(updatedEmail);
+        profilePassword.setText(updatedPassword);
     }
-    public void passUserData(){
+    public void passUserData() {
         String userUsername = profileUsername.getText().toString().trim();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
         Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
+                if (snapshot.exists()) {
                     String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
                     String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
                     String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
@@ -96,13 +97,33 @@ public class Profile extends AppCompatActivity {
                     intent.putExtra("username", usernameFromDB);
                     intent.putExtra("email", emailFromDB);
                     intent.putExtra("password", passwordFromDB);
-                    startActivity(intent);
+                    startActivityForResult(intent, 1); // Start EditProfile for result
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        showAllUserData(); // Refresh the user data
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
+            String updatedUsername = data.getStringExtra("username");
+            String updatedEmail = data.getStringExtra("email");
+            String updatedPassword = data.getStringExtra("password");
+
+            titleUsername.setText(updatedUsername);
+            profileUsername.setText(updatedUsername);
+            profileEmail.setText(updatedEmail);
+            profilePassword.setText(updatedPassword);
+        }
     }
 
 }
