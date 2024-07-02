@@ -31,6 +31,7 @@
         <activity
             android:name=".Notifications"
             android:exported="false" />
+        <receiver android:name=".NotificationReceiver" />
         <receiver android:name=".NotificationPublisher" />
         <activity
             android:name=".NoteHistory"

@@ -81,12 +81,17 @@ public class Notes extends AppCompatActivity {
     }
 
     private void saveNoteForDate(String date, String note) {
-        if (date != null) {
-            notesMap.put(date, note);
-            databaseReference.child(date).setValue(note);
-            Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show();
+        if (date != null && !date.isEmpty()) {
+            if (note != null && !note.trim().isEmpty()) {
+                notesMap.put(date, note);
+                databaseReference.child(date).setValue(note);
+                Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Note cannot be empty", Toast.LENGTH_SHORT).show();
+            }
         } else {
             Toast.makeText(this, "Please select a date", Toast.LENGTH_SHORT).show();
         }
     }
+
 }
