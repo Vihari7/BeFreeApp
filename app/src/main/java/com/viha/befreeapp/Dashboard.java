@@ -130,9 +130,6 @@ public class Dashboard extends AppCompatActivity {
                     case R.id.nav_home:
                         // Already on the Dashboard
                         return true;
-                    case R.id.nav_message:
-                        startActivity(new Intent(Dashboard.this, Message.class));
-                        return true;
                     case R.id.nav_notes:
                         startActivity(new Intent(Dashboard.this, Notes.class));
                         return true;

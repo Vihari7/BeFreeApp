@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:text="Crisis Support"
         android:textColor="@color/blueDarkest"
         android:textSize="25sp"
@@ -24,31 +24,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvCrisisSupportTitle"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/blueButton"
         android:padding="16dp"
         android:text="Call Helpline"
         android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/btnChatSupport"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnCallHelpline"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/blueButton"
-        android:padding="16dp"
-        android:text="Chat Support"
-        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/tvHotlineNumbers"
-        android:layout_width="wrap_content"
+        android:layout_width="372dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnChatSupport"
+        android:layout_below="@id/btnCallHelpline"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"

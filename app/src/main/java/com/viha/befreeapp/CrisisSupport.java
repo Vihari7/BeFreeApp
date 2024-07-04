@@ -15,7 +15,6 @@ public class CrisisSupport extends AppCompatActivity {
         setContentView(R.layout.activity_crisis_support);
 
         Button btnCallHelpline = findViewById(R.id.btnCallHelpline);
-        Button btnChatSupport = findViewById(R.id.btnChatSupport);
         Button btnVisitWebsite = findViewById(R.id.btnVisitWebsite);
         btnCallHelpline.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,12 +23,7 @@ public class CrisisSupport extends AppCompatActivity {
             }
         });
 
-        btnChatSupport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openChatSupport();
-            }
-        });
+
         btnVisitWebsite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,18 +38,7 @@ public class CrisisSupport extends AppCompatActivity {
         startActivity(callIntent);
     }
 
-    private void openChatSupport() {
-        // Open WhatsApp chat with a predefined phone number
-        String phoneNumber = "+94771793257";
-        String url = "https://api.whatsapp.com/send?phone=" + phoneNumber;
-        try {
-            Intent chatIntent = new Intent(Intent.ACTION_VIEW);
-            chatIntent.setData(Uri.parse(url));
-            startActivity(chatIntent);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
     private void openWebsite(String url) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(browserIntent);
