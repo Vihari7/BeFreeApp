@@ -15,19 +15,11 @@ public class DoctorSupport extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_support);
         // Initialize the CardView elements
-        nearbyMedicalFacilitiesCard = findViewById(R.id.Nearby_Medical_Faci);
         symptomCheckerCard = findViewById(R.id.Symptom_Checker);
         nearbyDoctorsCard = findViewById(R.id.Nearby_Doc);
         crisisSupportCard = findViewById(R.id.Crisis_Support);
 
         // Set click listeners for each CardView
-        nearbyMedicalFacilitiesCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openNearbyMedicalFacilities();
-            }
-        });
-
         symptomCheckerCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,10 +42,6 @@ public class DoctorSupport extends AppCompatActivity {
         });
     }
 
-    public void openNearbyMedicalFacilities() {
-        Intent intent = new Intent(this, NearbyMedicalFacility.class);
-        startActivity(intent);
-    }
 
     public void openSymptomChecker() {
         Intent intent = new Intent(this, SymptomChecker.class);
