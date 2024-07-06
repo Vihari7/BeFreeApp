@@ -15,6 +15,8 @@
         android:layout_marginTop="220dp"
         android:hint="Enter Your Starting Point"
         android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#575454"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +29,8 @@
         android:layout_marginTop="36dp"
         android:hint="Enter Your Destination"
         android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#575454"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,14 +38,15 @@
 
     <Button
         android:id="@+id/btnGetPath"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="326dp"
+        android:layout_height="66dp"
         android:layout_marginTop="44dp"
         android:backgroundTint="@color/blueButton"
         android:text="Get Direction"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEnd" />
 
