@@ -125,5 +125,4 @@ public class Profile extends AppCompatActivity {
             profilePassword.setText(updatedPassword);
         }
     }
-
 }
