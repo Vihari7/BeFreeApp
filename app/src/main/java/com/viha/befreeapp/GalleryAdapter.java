@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+
 public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHolder> {
 
     private Context context;
@@ -19,6 +20,14 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
         this.context = context;
         this.imageList = imageList;
     }
+
+    // Default constructor
+    public GalleryAdapter() {
+        // Initialize the context and imageList to avoid NullPointerException
+        this.context = null; // or some default value
+        this.imageList = new ArrayList<>();
+    }
+
     // Create new views
     @NonNull
     @Override
@@ -38,15 +47,14 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
                 // Create an intent to start FullscreenImage
                 Intent intent = new Intent(context, FullscreenImageActivity.class);
                 intent.putExtra("IMAGE_RES_ID", imageList.get(position));
-                context.startActivity(intent);// Start the FullscreenImageActivity
+                context.startActivity(intent); // Start the FullscreenImageActivity
             }
         });
     }
 
     @Override
-    public int getItemCount()
-    {
-        return imageList.size();// Return the size of dataset
+    public int getItemCount() {
+        return imageList.size(); // Return the size of dataset
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

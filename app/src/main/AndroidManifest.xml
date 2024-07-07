@@ -24,9 +24,6 @@
         android:theme="@style/Theme.BeFreeApp"
         tools:targetApi="31">
         <activity
-            android:name=".Message"
-            android:exported="false" />
-        <activity
             android:name=".NearByDoctors"
             android:exported="false" />
         <activity
@@ -57,9 +54,6 @@
             android:exported="false" />
         <activity
             android:name=".KindnessMeditation"
-            android:exported="false" />
-        <activity
-            android:name=".NearbyMedicalFacility"
             android:exported="false" />
         <activity
             android:name=".BreathInstruction_MindAct"
