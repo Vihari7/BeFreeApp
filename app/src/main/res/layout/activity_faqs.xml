@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Some features of Be Free, such as mindfulness activities and quotes, can be used offline. However, when chatting and searching for directions on maps, you need an internet connection."
+        android:text="No.you need an internet connection when login and using this app."
         android:textColor="@color/blueDarkest"
         android:textSize="16sp" />
 

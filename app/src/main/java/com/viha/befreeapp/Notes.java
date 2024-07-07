@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -24,7 +23,6 @@ public class Notes extends AppCompatActivity {
     private EditText noteEditText;
     private CalendarView calendarView;
     private Button saveButton, viewHistoryButton;
-    private Button colorRedButton, colorGreenButton, colorBlueButton;
     private String selectedDate;
     private Map<String, String> notesMap;
     private DatabaseReference databaseReference;
@@ -37,9 +35,7 @@ public class Notes extends AppCompatActivity {
         calendarView = findViewById(R.id.calendarView);
         saveButton = findViewById(R.id.saveButton);
         viewHistoryButton = findViewById(R.id.viewHistoryButton);
-        colorRedButton = findViewById(R.id.colorRedButton);
-        colorGreenButton = findViewById(R.id.colorGreenButton);
-        colorBlueButton = findViewById(R.id.colorBlueButton);
+
 
         notesMap = new HashMap<>();
         databaseReference = FirebaseDatabase.getInstance().getReference("notes");
@@ -61,10 +57,7 @@ public class Notes extends AppCompatActivity {
             startActivity(intent);
         });
 
-        colorRedButton.setOnClickListener(v -> changeEditTextTextColor(Color.RED));
-        colorGreenButton.setOnClickListener(v -> changeEditTextTextColor(Color.GREEN));
-        colorBlueButton.setOnClickListener(v -> changeEditTextTextColor(Color.BLUE));
-    }
+     }
 
     private void changeEditTextTextColor(int color) {
         Spannable spannable = new SpannableString(noteEditText.getText());
