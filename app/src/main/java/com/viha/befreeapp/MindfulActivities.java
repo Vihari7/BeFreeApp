@@ -13,6 +13,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import androidx.cardview.widget.CardView;
+import android.app.PendingIntent;
+import android.content.Intent;
 
 public class MindfulActivities extends AppCompatActivity {
 
@@ -92,7 +94,7 @@ public class MindfulActivities extends AppCompatActivity {
     private Notification createNotification(Class<?> cls) {
         Intent intent = new Intent(this, cls);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_IMMUTABLE);
 
         String channelId = "default_channel_id";
         Notification.Builder builder;
@@ -105,7 +107,6 @@ public class MindfulActivities extends AppCompatActivity {
 
             builder = new Notification.Builder(this, channelId);
         } else {
-
             builder = new Notification.Builder(this);
         }
         // Build the notification
@@ -117,5 +118,17 @@ public class MindfulActivities extends AppCompatActivity {
                 .setAutoCancel(true);
 
         return builder.build();
+    }
+
+    //newly add can remove if want
+    private void createPendingIntent() {
+        Intent intent = new Intent(this, MindfulWalking.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                this,
+                0,
+                intent,
+                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_IMMUTABLE
+        );
+        // Use the pendingIntent as needed
     }
 }

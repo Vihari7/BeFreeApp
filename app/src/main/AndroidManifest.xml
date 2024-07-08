@@ -82,9 +82,7 @@
         <activity
             android:name=".FullscreenImageActivity"
             android:exported="false" />
-        <activity
-            android:name=".GalleryAdapter"
-            android:exported="false" />
+
         <activity
             android:name=".Gallery"
             android:exported="false" />
@@ -97,9 +95,6 @@
         <activity
             android:name=".MindfulActivities"
             android:exported="false" />
-
-
-
         <activity
             android:name=".Quotes"
             android:exported="false" />

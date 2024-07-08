@@ -5,86 +5,103 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Notes extends AppCompatActivity {
-    private EditText noteEditText;
+
     private CalendarView calendarView;
-    private Button saveButton, viewHistoryButton;
+    private EditText noteEditText;
+    private Button saveButton;
+    private Button viewHistoryButton;
+
     private String selectedDate;
-    private Map<String, String> notesMap;
-    private DatabaseReference databaseReference;
+    private DatabaseReference notesRef;
+    private String username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
 
-        noteEditText = findViewById(R.id.noteEditText);
         calendarView = findViewById(R.id.calendarView);
+        noteEditText = findViewById(R.id.noteEditText);
         saveButton = findViewById(R.id.saveButton);
         viewHistoryButton = findViewById(R.id.viewHistoryButton);
 
+        // Get username from intent
+        Intent intent = getIntent();
+        username = intent.getStringExtra("username");
 
-        notesMap = new HashMap<>();
-        databaseReference = FirebaseDatabase.getInstance().getReference("notes");
+        // Initialize Firebase reference
+        notesRef = FirebaseDatabase.getInstance().getReference("notes").child(username);
 
+        // Get selected date from CalendarView
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                selectedDate = dayOfMonth + "-" + (month + 1) + "-" + year;
-                loadNoteForDate(selectedDate);
+                selectedDate = year + "-" + (month + 1) + "-" + dayOfMonth;
+                loadNote();
             }
         });
 
-        saveButton.setOnClickListener(v -> {
-            saveNoteForDate(selectedDate, noteEditText.getText().toString());
-        });
-
-        viewHistoryButton.setOnClickListener(v -> {
-            Intent intent = new Intent(Notes.this, NoteHistory.class);
-            startActivity(intent);
-        });
-
-     }
-
-    private void changeEditTextTextColor(int color) {
-        Spannable spannable = new SpannableString(noteEditText.getText());
-        spannable.setSpan(new ForegroundColorSpan(color), 0, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        noteEditText.setText(spannable);
-    }
-
-    private void loadNoteForDate(String date) {
-        if (notesMap.containsKey(date)) {
-            noteEditText.setText(notesMap.get(date));
-        } else {
-            noteEditText.setText("");
-        }
-    }
-
-    private void saveNoteForDate(String date, String note) {
-        if (date != null && !date.isEmpty()) {
-            if (note != null && !note.trim().isEmpty()) {
-                notesMap.put(date, note);
-                databaseReference.child(date).setValue(note);
-                Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Note cannot be empty", Toast.LENGTH_SHORT).show();
+        // Save note to Firebase
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveNote();
             }
-        } else {
-            Toast.makeText(this, "Please select a date", Toast.LENGTH_SHORT).show();
-        }
+        });
+
+        // View note history
+        viewHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Notes.this, NoteHistory.class);
+                intent.putExtra("username", username);
+                startActivity(intent);
+            }
+        });
     }
 
+    private void loadNote() {
+        notesRef.child(selectedDate).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    String note = snapshot.getValue(String.class);
+                    noteEditText.setText(note);
+                } else {
+                    noteEditText.setText("");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Notes.this, "Error loading note", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void saveNote() {
+        String note = noteEditText.getText().toString();
+        if (!note.isEmpty() && selectedDate != null) {
+            notesRef.child(selectedDate).setValue(note);
+            Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Please select a date and enter a note", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

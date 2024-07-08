@@ -121,13 +121,13 @@
 
     <TextView
         android:id="@+id/buttonIntroText"
-        android:layout_width="337dp"
+        android:layout_width="335dp"
         android:layout_height="48dp"
         android:layout_margin="16dp"
         android:layout_marginBottom="16dp"
-        android:textSize="16dp"
+        android:text=" You can follow below to relax your mind with breathing exercise"
         android:textColor="@color/blueDarkest"
-        android:text="You can follow below to relax your mind with breathing exercise"
+        android:textSize="16dp"
         app:layout_constraintBottom_toTopOf="@id/navToBreathButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
