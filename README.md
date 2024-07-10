@@ -20,4 +20,5 @@ Key Features:
   • Reminders/Notifications: Functionality to set reminders for mindfulness activities, ensuring users incorporate these practices into their daily routine.
 
 Problem the App Aims to Solve: 
+
   The inspiration behind creating "Be Free" came from recognizing the increasing stress and mental health challenges faced by people in their daily lives. Many individuals, whether they are students, professionals, or homemakers, often struggle to find effective ways to relax and maintain their mental health. It's here to fill that gap by providing easy-to-access mental health resources. 
